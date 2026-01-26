@@ -1,0 +1,2482 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SALMA Solutions - Konsultan Bisnis & Penyedia SDM Profesional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+
+/* Clients & Partnership Styles */
+#clients {
+    position: relative;
+    overflow: hidden;
+}
+
+.clients-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.clients-scroll-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin: 40px 0;
+    padding: 35px 0;
+}
+
+.clients-track {
+    display: flex;
+    animation: scroll-left 40s linear infinite;
+    width: fit-content;
+}
+
+.client-logo {
+    flex: 0 0 180px;
+    height: 120px;
+    margin: 0 25px;
+    background: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    cursor: pointer;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.client-logo:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    border-color: var(--secondary);
+}
+
+.client-logo:hover .client-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.client-logo img {
+    max-width: 100px;
+    max-height: 90px;
+    filter: grayscale(100%);
+    opacity: 0.8;
+    transition: all 0.4s ease;
+}
+
+.client-logo:hover img {
+    filter: grayscale(0);
+    opacity: 1;
+}
+
+.client-tooltip {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background-color: var(--primary);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.client-tooltip:after {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 6px 6px 6px;
+    border-style: solid;
+    border-color: transparent transparent var(--primary) transparent;
+}
+
+.clients-stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 70px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+    background: white;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+    transition: var(--transition);
+    min-width: 180px;
+}
+
+.stat-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.stat-item h3 {
+    font-size: 2.8rem;
+    color: var(--secondary);
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, var(--secondary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-item p {
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 0;
+    font-size: 1.1rem;
+}
+
+/* Animasi scroll infinite */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Efek gradient di sisi kiri dan kanan */
+.clients-scroll-wrapper:before,
+.clients-scroll-wrapper:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.clients-scroll-wrapper:before {
+    left: 0;
+    background: linear-gradient(to right, #f9fafc, rgba(249, 250, 252, 0));
+}
+
+.clients-scroll-wrapper:after {
+    right: 0;
+    background: linear-gradient(to left, #f9fafc, rgba(249, 250, 252, 0));
+}
+
+/* Responsive Styles untuk Clients Section */
+@media (max-width: 992px) {
+    .client-logo {
+        flex: 0 0 150px;
+        height: 100px;
+        margin: 0 20px;
+    }
+    
+    .client-logo img {
+        max-width: 80px;
+        max-height: 40px;
+    }
+    
+    .clients-stats {
+        gap: 30px;
+    }
+    
+    .stat-item {
+        padding: 25px 30px;
+        min-width: 150px;
+    }
+    
+    .stat-item h3 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .client-logo {
+        flex: 0 0 120px;
+        height: 85px;
+        margin: 0 15px;
+    }
+    
+    .client-logo img {
+        max-width: 70px;
+        max-height: 35px;
+    }
+    
+    .clients-stats {
+        gap: 20px;
+        margin-top: 50px;
+    }
+    
+    .stat-item {
+        padding: 20px;
+        min-width: 120px;
+    }
+    
+    .stat-item h3 {
+        font-size: 1.8rem;
+    }
+    
+    .stat-item p {
+        font-size: 1rem;
+    }
+    
+    .clients-scroll-wrapper:before,
+    .clients-scroll-wrapper:after {
+        width: 50px;
+    }
+}
+
+@media (max-width: 576px) {
+    .client-logo {
+        flex: 0 0 100px;
+        height: 70px;
+        margin: 0 10px;
+    }
+    
+    .client-logo img {
+        max-width: 60px;
+        max-height: 30px;
+    }
+    
+    .clients-stats {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .stat-item {
+        width: 80%;
+        max-width: 250px;
+    }
+    
+    #clients {
+        padding: 60px 0;
+    }
+}
+
+/* Hover pause animation */
+.clients-scroll-wrapper:hover .clients-track {
+    animation-play-state: paused;
+}
+
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #1a3a5f;
+            --secondary: #4a8c5e;
+            --accent: #f8b739;
+            --light: #f5f7fa;
+            --dark: #2c3e50;
+            --gray: #6c757d;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            line-height: 1.7;
+            color: var(--dark);
+            background-color: var(--light);
+            font-weight: 400;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        section {
+            padding: 100px 0;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: var(--dark);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background-color: var(--secondary);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(74, 140, 94, 0.3);
+        }
+        
+        .btn:hover {
+            background-color: #3a7a4e;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .btn-accent {
+            background-color: var(--accent);
+            color: var(--dark);
+            box-shadow: 0 4px 15px rgba(248, 183, 57, 0.3);
+        }
+        
+        .btn-accent:hover {
+            background-color: #e6a82e;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+            box-shadow: none;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+            margin: 20px auto;
+            border-radius: 5px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0;
+            color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary);
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: 
+                linear-gradient(135deg, rgba(26, 58, 95, 0.85) 0%, rgba(26, 58, 95, 0.9) 100%), 
+                url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 100px 0 120px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, var(--light));
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 25px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: rgba(255,255,255,0.9);
+            font-weight: 300;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+        
+        .hero .btn {
+            margin: 0 10px 15px;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+        
+        /* About Section */
+        #about {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+            position: relative;
+        }
+        
+        #about:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%231a3a5f' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .about-image:before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            bottom: -10px;
+            left: -10px;
+            background: linear-gradient(45deg, var(--secondary), var(--accent));
+            z-index: -1;
+            border-radius: 20px;
+            opacity: 0.7;
+        }
+        
+        .about-image:hover {
+            transform: translateY(-10px);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Vision & Mission */
+        .vision-mission {
+            background-color: #f0f4f8;
+            position: relative;
+        }
+        
+        .vm-container {
+            display: flex;
+            gap: 40px;
+        }
+        
+        .vision, .mission {
+            flex: 1;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .vision:hover, .mission:hover {
+            transform: translateY(-10px);
+        }
+        
+        .vision:before, .mission:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+        }
+        
+        .vision h3, .mission h3 {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--primary);
+        }
+        
+        .vision h3 i, .mission h3 i {
+            color: var(--accent);
+            font-size: 1.5rem;
+        }
+        
+        .mission-list {
+            list-style: none;
+        }
+        
+        .mission-list li {
+            margin-bottom: 15px;
+            padding-left: 35px;
+            position: relative;
+            font-size: 1.05rem;
+        }
+        
+        .mission-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        /* Services */
+        #services {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+            position: relative;
+        }
+        
+        #services:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%231a3a5f' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+        }
+        
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .service-icon {
+            font-size: 3.5rem;
+            color: var(--secondary);
+            margin-bottom: 25px;
+            display: inline-block;
+            padding: 20px;
+            border-radius: 50%;
+            background: rgba(74, 140, 94, 0.1);
+            transition: var(--transition);
+        }
+        
+        .service-card:hover .service-icon {
+            transform: rotateY(180deg);
+            background: rgba(74, 140, 94, 0.2);
+        }
+        
+        .service-card h3 {
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .service-card ul {
+            text-align: left;
+            margin-top: 20px;
+            list-style: none;
+        }
+        
+        .service-card ul li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .service-card ul li:before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        /* Team */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+        
+        .team-member {
+            text-align: center;
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+        
+        .team-member:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+        }
+        
+        .member-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 25px;
+            border: 5px solid var(--light);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+        
+        .team-member:hover .member-photo {
+            border-color: var(--accent);
+        }
+        
+        .team-member h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .team-member p {
+            color: var(--gray);
+            margin-bottom: 0;
+        }
+        
+        .member-social {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .member-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--light);
+            color: var(--primary);
+            margin: 0 5px;
+            transition: var(--transition);
+        }
+        
+        .member-social a:hover {
+            background-color: var(--secondary);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        /* Contact */
+        #contact {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+            position: relative;
+        }
+        
+        #contact:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%231a3a5f' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 60px;
+        }
+        
+        .contact-info, .contact-form {
+            flex: 1;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+            color:black;
+        }
+        
+        .contact-info h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+            color:black;
+
+        }
+        
+        .contact-details {
+            margin-bottom: 40px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .contact-icon {
+            margin-right: 20px;
+            color: var(--secondary);
+            font-size: 1.3rem;
+            width: 30px;
+            text-align: center;
+            padding-top: 5px;
+        }
+        
+        .contact-item div p:first-child {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+        
+        .contact-item div p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #e1e5e9;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(74, 140, 94, 0.1);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Testimonial Cards */
+        .testimonial-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-top: 20px;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .testimonial-card:before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 4rem;
+            color: rgba(74, 140, 94, 0.1);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-card p:last-child {
+            margin-bottom: 0;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Milestone Styles */
+        .milestone-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .milestone-container:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 30px;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--secondary), var(--accent));
+            border-radius: 2px;
+        }
+
+        .milestone-item {
+            display: flex;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .milestone-year {
+            width: 60px;
+            height: 60px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-right: 40px;
+            flex-shrink: 0;
+            box-shadow: 0 5px 15px rgba(74, 140, 94, 0.3);
+            z-index: 1;
+        }
+
+        .milestone-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            flex: 1;
+            transition: var(--transition);
+        }
+
+        .milestone-content:hover {
+            transform: translateY(-5px);
+        }
+
+        .milestone-content h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        /* Market Analysis Styles */
+        .market-analysis-content {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+        }
+
+        .market-trends {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .market-trends:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+        }
+
+        .market-trends:hover {
+            transform: translateY(-5px);
+        }
+
+        .target-market {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .target-market:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+        }
+
+        .target-market:hover {
+            transform: translateY(-5px);
+        }
+
+        .target-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .target-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .target-item i {
+            font-size: 1.8rem;
+            color: var(--secondary);
+            background: rgba(74, 140, 94, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .target-item h4 {
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .target-item p {
+            margin-bottom: 0;
+            color: var(--gray);
+        }
+
+        .competitive-advantage {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .competitive-advantage:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+        }
+
+        .competitive-advantage:hover {
+            transform: translateY(-5px);
+        }
+
+        .advantage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .advantage-item {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 10px;
+            background: var(--light);
+            transition: var(--transition);
+        }
+
+        .advantage-item:hover {
+            transform: translateY(-5px);
+            background: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .advantage-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .advantage-item h4 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .advantage-item p {
+            margin-bottom: 0;
+            color: var(--gray);
+        }
+
+        /* Experience Banner */
+        .experience-banner {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .experience-banner:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .experience-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .experience-banner h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .experience-banner p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: rgba(255,255,255,0.9);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .about-content, .vm-container, .contact-container {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            section {
+                padding: 80px 0;
+            }
+            
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero {
+                padding: 150px 0 80px;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-card, .vision, .mission, .team-member {
+                padding: 30px 20px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .milestone-container:before {
+                left: 25px;
+            }
+            
+            .milestone-year {
+                width: 50px;
+                height: 50px;
+                font-size: 1rem;
+                margin-right: 20px;
+            }
+            
+            .milestone-content {
+                padding: 20px;
+            }
+            
+            .target-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .market-trends, .target-market, .competitive-advantage {
+                padding: 30px 20px;
+            }
+            
+            .experience-banner h2 {
+                font-size: 2rem;
+            }
+            
+            .experience-banner p {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero .btn {
+                display: block;
+                width: 100%;
+                margin: 10px 0;
+            }
+            
+            .section-title {
+                margin-bottom: 50px;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+    </style>
+</head>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SALMA Solutions - <?php echo $current_page == 'index.html' ? 'Beranda' : 'Produk Digital'; ?></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #1a3a5f;
+            --secondary: #4a8c5e;
+            --accent: #f8b739;
+            --light: #f5f7fa;
+            --dark: #2c3e50;
+            --gray: #6c757d;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--secondary);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background-color: #3a7a4e;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .btn-accent {
+            background-color: var(--accent);
+            color: var(--dark);
+        }
+        
+        .btn-accent:hover {
+            background-color: #e6a82e;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        /* Top Bar dengan Jam Operasional */
+        .top-bar {
+            background: linear-gradient(90deg, #1a3a5f 0%, #2c5282 50%, #1a3a5f 100%);
+            color: white;
+            padding: 10px 0;
+            font-size: 0.9rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .top-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.3),
+                transparent
+            );
+            animation: spotlight 10s ease-in-out infinite;
+        }
+        
+        @keyframes spotlight {
+            0% {
+                left: -100%;
+            }
+            15% {
+                left: 100%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+        
+        .top-bar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .business-hours {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .business-hours i {
+            margin-right: 8px;
+            color: var(--accent);
+        }
+        
+        .contact-top {
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-top i {
+            margin-right: 8px;
+            color: var(--accent);
+        }
+        
+        .contact-top a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: color 0.3s;
+        }
+        
+        .contact-top a:hover {
+            color: var(--accent);
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .logo-image {
+            height: 50px;
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #066DB5;
+            position: relative;
+            overflow: hidden;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        
+      
+        
+        .logo-text span {
+            color: #06A1F9;
+            position: relative;
+            z-index: 1;
+        }
+        
+
+        
+
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary);
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        .nav-button {
+            background-color: var(--accent);
+            color: var(--dark);
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-button:hover {
+            background-color: #e6a82e;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .top-bar-container {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                padding: 100px;
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .contact-top {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .contact-top a {
+                margin-left: 0;
+            }
+            
+            .logo-text {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar dengan Jam Operasional -->
+    <div class="top-bar">
+        <div class="container top-bar-container">
+            <div class="business-hours">
+                <i class="far fa-clock"></i>
+                <span>Jam Operasional: Senin - Sabtu: 09:00 - 18:00 | Minggu: Tutup</span>
+            </div>
+            <div class="contact-top">
+                <i class="fas fa-phone-alt"></i>
+                <span>+62 819-0176-3203</span>
+                <a href="mailto:satulangkahmajubersama@gmail.com">
+                    <i class="far fa-envelope"></i> satulangkahmajubersama@gmail.com
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="logo.png" alt="SALMA Solutions" class="logo-image">
+                <div class="logo-text">SALMA <span>Solutions</span></div>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                        <!-- Menu untuk halaman beranda -->
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="#about">Tentang Kami</a></li>
+                        <li><a href="#services">Layanan</a></li>
+                        <li><a href="#team">Tim Kami</a></li>
+                        <li><a href="#contact">Kontak</a></li>
+                        <li><a href="produk.html" class="nav-button">Produk Digital</a></li>
+    
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('active');
+        });
+        
+
+    </script>
+</body>
+</html>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Solusi Cerdas Kebutuhan Bisnis Anda</h1>
+            <p>SALMA Solutions adalah mitra strategis Anda dalam layanan konsultasi bisnis, headhunter profesional, dan produk digital HR Retainer. Kami hadir untuk mendukung pertumbuhan bisnis Anda dengan pendekatan yang tepat, efisien, dan berbasis hasil.</p>
+            <div class="hero-buttons">
+                <a href="produk.html" class="btn btn-accent">PRODUK DIGITAL KAMI</a>
+                <a href="#contact" class="btn">KONSULTASI GRATIS</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">Tentang Perusahaan</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>SALMA Solutions</h3>
+                    <p>SALMA Solutions adalah perusahaan modern yang bergerak di bidang konsultasi bisnis & manajemen serta penyedia jasa tenaga kerja. Kami hadir sebagai solusi terintegrasi bagi pelaku bisnis yang ingin berkembang secara berkelanjutan, efisien, dan kompetitif.</p>
+                    <p>Dengan pendekatan profesional dan berbasis hasil, SALMA Solutions memberikan layanan strategis bagi perusahaan dalam mengelola sumber daya, menyusun sistem manajemen, hingga pemenuhan kebutuhan tenaga kerja yang tepat guna.</p>
+                    <p>Kami percaya, kesuksesan setiap klien dimulai dari satu langkah kecil yang dijalankan bersama dengan mitra yang tepat.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="SALMA Solutions Team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision & Mission -->
+    <section class="vision-mission">
+        <div class="container">
+            <div class="vm-container">
+                <div class="vision">
+                    <h3><i class="fas fa-eye"></i> Visi Kami</h3>
+                    <p>Menjadi mitra transformasi bisnis dan sumber daya manusia terdepan di Indonesia yang mendorong pertumbuhan, efisiensi, dan inovasi.</p>
+                </div>
+                <div class="mission">
+                    <h3><i class="fas fa-bullseye"></i> Misi Kami</h3>
+                    <ul class="mission-list">
+                        <li>Menyediakan layanan konsultasi bisnis dan manajemen yang inovatif, praktis, dan berdampak.</li>
+                        <li>Menyediakan tenaga kerja profesional dan siap kerja sesuai kebutuhan klien.</li>
+                        <li>Menyediakan pelatihan dan pengembangan SDM yang berorientasi masa depan.</li>
+                        <li>Menjalin hubungan jangka panjang berbasis kepercayaan dan hasil.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Banner -->
+    <div class="experience-banner">
+        <div class="container">
+            <div class="experience-content">
+                <h2>Konsultan Manajemen SDM Profesional</h2>
+                <p>Lebih dari 15 Tahun Pengalaman dalam Konsultasi Bisnis dan Manajemen SDM</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Milestone Section -->
+    <section id="milestone">
+        <div class="container">
+            <h2 class="section-title">Milestone</h2>
+            <div class="milestone-container">
+                <div class="milestone-item">
+                    <div class="milestone-year">2025</div>
+                    <div class="milestone-content">
+                        <h3>Pendirian Perusahaan</h3>
+                        <p>Didirikan sebagai unit usaha konsultasi dan penyedia tenaga kerja. dan Resmi berbadan hukum sebagai PT Satu Langkah Maju Bersama dengan brand SALMA Solutions.</p>
+                    </div>
+                </div>
+                <div class="milestone-item">
+                    <div class="milestone-year">2025</div>
+                    <div class="milestone-content">
+                        <h3>Ekspansi Layanan</h3>
+                        <p>Memperluas layanan ke sektor manufaktur, retail, dan UMKM digital.</p>
+                    </div>
+                </div>
+                <div class="milestone-item">
+                    <div class="milestone-year">2026</div>
+                    <div class="milestone-content">
+                        <h3>Ekspansi Geografis</h3>
+                        <p>Menjadi penyedia layanan konsultasi dan SDM terpercaya di 10 kota besar di Indonesia.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Analysis Section -->
+    <section id="market-analysis" class="vision-mission">
+        <div class="container">
+            <h2 class="section-title">Market Analysis</h2>
+            <div class="market-analysis-content">
+                <div class="market-trends">
+                    <h3>Trend Kebutuhan Bisnis</h3>
+                    <p>Banyak perusahaan menghadapi tantangan efisiensi operasional dan kekurangan SDM yang kompeten. SALMA hadir menjawab kebutuhan tersebut dengan pendekatan solutif.</p>
+                </div>
+                
+                <div class="target-market">
+                    <h3>Target Market</h3>
+                    <div class="target-list">
+                        <div class="target-item">
+                            <i class="fas fa-building"></i>
+                            <div>
+                                <h4>Perusahaan Skala Kecil hingga Menengah (UMKM)</h4>
+                                <p>Yang ingin scale-up bisnis mereka.</p>
+                            </div>
+                        </div>
+                        <div class="target-item">
+                            <i class="fas fa-chart-line"></i>
+                            <div>
+                                <h4>Perusahaan Korporasi</h4>
+                                <p>Yang ingin efisiensi & transformasi manajemen.</p>
+                            </div>
+                        </div>
+                        <div class="target-item">
+                            <i class="fas fa-rocket"></i>
+                            <div>
+                                <h4>Startup dan Bisnis Digital</h4>
+                                <p>Yang membutuhkan SDM siap kerja.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="competitive-advantage">
+                    <h3>Keunggulan Kompetitif SALMA Solutions</h3>
+                    <div class="advantage-grid">
+                        <div class="advantage-item">
+                            <div class="advantage-icon">
+                                <i class="fas fa-sliders-h"></i>
+                            </div>
+                            <h4>Layanan Fleksibel & Terukur</h4>
+                            <p>Kami menyesuaikan solusi sesuai kebutuhan spesifik klien.</p>
+                        </div>
+                        <div class="advantage-item">
+                            <div class="advantage-icon">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <h4>Tenaga Ahli di Bidangnya</h4>
+                            <p>Tim profesional dengan pengalaman luas di berbagai industri.</p>
+                        </div>
+                        <div class="advantage-item">
+                            <div class="advantage-icon">
+                                <i class="fas fa-chart-pie"></i>
+                            </div>
+                            <h4>Portofolio dan Pendekatan Berbasis Hasil</h4>
+                            <p>Fokus pada pencapaian hasil yang terukur dan berdampak.</p>
+                        </div>
+                        <div class="advantage-item">
+                            <div class="advantage-icon">
+                                <i class="fas fa-sync-alt"></i>
+                            </div>
+                            <h4>Dukungan End-to-End</h4>
+                            <p>Mulai dari konsultasi hingga eksekusi lapangan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Layanan Kami</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Konsultasi Bisnis & Manajemen</h3>
+                    <p>Menyusun strategi bisnis, sistem kerja, dan SOP yang efektif untuk efisiensi dan pertumbuhan bisnis jangka panjang.</p>
+                    <ul>
+                        <li>Business Model & Strategy Development</li>
+                        <li>Manajemen Operasional & SDM</li>
+                        <li>Transformasi Digital Bisnis</li>
+                        <li>SOP & Sistem Manajemen</li>
+                        <li>Pendampingan Bisnis UMKM hingga Korporat</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Penyediaan Jasa Tenaga Kerja</h3>
+                    <p>Menyediakan kandidat profesional yang sesuai dengan kebutuhan perusahaan, mulai dari level staff hingga eksekutif.</p>
+                    <ul>
+                        <li>Rekrutmen & Seleksi (Staff hingga Level Managerial)</li>
+                        <li>Penyedia Tenaga Kerja Harian / Kontrak</li>
+                        <li>Outsourcing SDM (non-core function)</li>
+                        <li>HR Project & Talent Placement</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Audit & Pengembangan HR</h3>
+                    <p>Menganalisis sistem HR Anda, mengevaluasi kinerja SDM, dan memberi rekomendasi perbaikan.</p>
+                    <ul>
+                        <li>Analisis Sistem HR</li>
+                        <li>Evaluasi Kinerja SDM</li>
+                        <li>Rekomendasi Perbaikan</li>
+                        <li>Pengembangan Organisasi</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team -->
+    <section id="team">
+        <div class="container">
+            <h2 class="section-title">Tim Kami</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 50px;">Tim Profesional dengan Pengalaman Lebih dari 10 Tahun. Di balik setiap layanan SALMA Solutions, terdapat tim ahli yang telah berpengalaman lebih dari 10 tahun dalam dunia bisnis, manajemen, dan pengelolaan sumber daya manusia.</p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="foto/riyan.jpg" alt="Fitrian Adi Utama" class="member-photo">
+                    <h3>Fitrian Adi Utama</h3>
+                    <p>Direktur Utama</p>
+                    <div class="member-social">
+                        <a href="https://www.instagram.com/f_aditama15?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <img src="foto/aulia.jpg" alt="Aulia Rizki Ramadani" class="member-photo">
+                    <h3>Aulia Rizki Ramadani</h3>
+                    <p>Manager Pemasaran</p>
+                    <div class="member-social">
+                        <a href="https://www.instagram.com/auliarizkira?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+        
+                
+
+            </div>
+        </div>
+    </section>
+        <!-- Clients & Partnership Section -->
+    <section id="clients" style="background-color: #f9fafc; padding: 80px 0;">
+        <div class="container">
+            <h2 class="section-title">Klien & Kerjasama</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 50px; color: var(--gray);">
+                Kami bangga telah dipercaya oleh berbagai perusahaan terkemuka dalam mendukung transformasi bisnis dan pengelolaan SDM mereka.
+            </p>
+            
+            <div class="clients-container">
+                <!-- Clients Logos Horizontal Scroll -->
+                <div class="clients-scroll-wrapper">
+                    <div class="clients-track">
+                        <!-- Baris pertama logo -->
+                        <div class="client-logo">
+                            <img src="foto/adivasa-removebg-preview.png" alt="Adivasa">
+                            <div class="client-tooltip">Adivasa</div>
+                        </div>
+                        <div class="client-logo">
+                            <img src="foto/admart.png" alt="Admart">
+                            <div class="client-tooltip">Admart</div>
+                        </div>
+                        <div class="client-logo">
+                            <img src="foto/cotton_dna_semarang-removebg-preview.png" alt="Cotton DNA Semarang">
+                            <div class="client-tooltip">Cotton DNA Semarang</div>
+                        </div>
+                        <div class="client-logo">
+                            <img src="foto/logo-super-sublim-scaled.png" alt="SuperSublim">
+                            <div class="client-tooltip">Super Sublim Indonesia</div>
+                        </div>
+                        <div class="client-logo">
+                            <img src="foto/nuclear-removebg-preview.png" alt="Nuclear">
+                            <div class="client-tooltip">Nuclear</div>
+                        </div>
+                        <div class="client-logo">
+                            <img src="foto/pilar_abadi.png" alt="Pilar Abadi Realty">
+                            <div class="client-tooltip">Pilar Abadi Realty</div>
+                        </div>
+                        <div class="client-logo">
+                            <img src="foto/pt_karya_sinergi_cemerlang-removebg-preview.png" alt="PT Karya Sinergi Cemerlang">
+                            <div class="client-tooltip">PT Karya Sinergi Cemerlang</div>
+                        </div>
+                        <div class="client-logo">
+                            <img src="foto/PT_Zhiyuan_International_Trade-removebg-preview.png" alt="PT Zhiyuan International">
+                            <div class="client-tooltip">PT Zhiyuan International</div>
+                        </div>
+                        <div class="client-logo">
+                            <img src="foto/wadah_kertas_nusantara.png" alt="Wadah Kertas Nusantara">
+                            <div class="client-tooltip">Wadah Kertas Nusantara</div>
+                        </div>
+                        
+                
+ 
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Hubungi Kami</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3 style="color:#1a3a5f;">Informasi Kontak</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <p><strong>Telepon</strong></p>
+                                <p>+62 819-0176-3203</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p><strong>Email</strong></p>
+                                <p>satulangkahmajubersama@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <p><strong>Alamat</strong></p>
+                                <p>Sampangan, Semarang, Jawa Tengah  <p>Bringin, Ngaliyan, Jawa Tengah</p>
+
+
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                            <div>
+                                <p><strong>Instagram</strong></p>
+                                <p>@satulangkah_bersama</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                </div>
+                
+                <div class="contact-form">
+
+                <h3>Jam Operasional</h3>
+                    <div class="testimonial-card">
+                        <p><strong>Senin - Sabtu:</strong> 09:00 - 18:00</p>
+                        <p><strong>Minggu:</strong> Tutup</p>
+                    </div><BR></BR>
+                    <h3>Testimoni Klien</h3>
+                    <div class="testimonial-card">
+                        <p>"SALMA Solutions membantu kami menata ulang sistem HR dengan pendekatan yang sangat profesional. Tim kami kini lebih produktif dan terstruktur."</p>
+                        <p><strong>— HR Manager, PT Admart Indonesia</strong></p>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <p>"Layanan headhunter-nya sangat memudahkan. Dalam waktu singkat kami mendapatkan kandidat yang tepat dan langsung perform."</p>
+                        <p><strong>— Branch Manager, PT Supersublim Indonesia</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <h3>SALMA Solutions</h3>
+                    <p>PT Satu Langkah Maju Bersama</p>
+                    <p>Konsultan Bisnis | Headhunter | Produk Digital HR</p>
+                    <div class="social-links">
+                        <a href="https://wa.me/6281901763203" target="_blank" title="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://instagram.com/satulangkah_bersama" target="_blank" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="mailto:satulangkahmajubersama@gmail.com" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://goo.gl/maps/gX8YrTqo2JQesePCA" target="_blank" title="Lokasi">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-contact-map">
+                    <div class="contact-info">
+                        <h3>Kontak & Lokasi</h3>
+                        <ul class="footer-links">
+                            <li>
+                                <i class="fab fa-whatsapp"></i> 
+                                <a href="https://wa.me/6281901763203" target="_blank">+62 819-0176-3203</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i> 
+                                <a href="mailto:satulangkahmajubersama@gmail.com">satulangkahmajubersama@gmail.com</a>
+                            </li>
+                            <li>
+                                <i class="fab fa-instagram"></i> 
+                                <a href="https://instagram.com/satulangkah_bersama" target="_blank">@satulangkah_bersama</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i> 
+                                <a href="https://goo.gl/maps/gX8YrTqo2JQesePCA" target="_blank">Sampangan, Semarang, Jawa Tengah</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i> 
+                                <a href="https://maps.app.goo.gl/26tRNjuGeuxKkyaf7" target="_blank">Bringin, Ngaliyan, Jawa Tengah</a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.34839167358!2d110.414474!3d-7.005543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMDAnMTkuOSJTIDExMMKwMjQnNTIuMSJF!5e0!3m2!1sid!2sid!4v1620000000000!5m2!1sid!2sid" 
+                            allowfullscreen="" 
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 SALMA Solutions - PT Satu Langkah Maju Bersama. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<style>
+    /* Footer Styles */
+    footer {
+        background-color: var(--primary);
+        color: white;
+        padding: 60px 0 30px;
+    }
+    
+    .footer-container {
+        margin-bottom: 40px;
+    }
+    
+    .footer-main {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 60px;
+        align-items: start;
+    }
+    
+    .footer-brand h3 {
+        color: white;
+        margin-bottom: 15px;
+        position: relative;
+        padding-bottom: 10px;
+        font-size: 1.5rem;
+    }
+    
+    .footer-brand h3:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        height: 2px;
+        background-color: var(--accent);
+    }
+    
+    .footer-brand p {
+        margin-bottom: 10px;
+        color: #ddd;
+        line-height: 1.5;
+    }
+    
+    .footer-contact-map {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: start;
+    }
+    
+    .contact-info h3 {
+        color: white;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 10px;
+        font-size: 1.3rem;
+    }
+    
+    .contact-info h3:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        height: 2px;
+        background-color: var(--accent);
+    }
+    
+    .footer-links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .footer-links li {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        transition: transform 0.2s ease;
+    }
+    
+    .footer-links li:hover {
+        transform: translateX(5px);
+    }
+    
+    .footer-links li i {
+        margin-right: 12px;
+        width: 20px;
+        color: var(--accent);
+        font-size: 1.1rem;
+    }
+    
+    .footer-links a {
+        color: #ddd;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-size: 0.95rem;
+    }
+    
+    .footer-links a:hover {
+        color: var(--accent);
+    }
+    
+    .social-links {
+        display: flex;
+        gap: 15px;
+        margin-top: 25px;
+    }
+    
+    .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        background-color: rgba(255,255,255,0.1);
+        border-radius: 50%;
+        color: white;
+        transition: all 0.3s;
+        text-decoration: none;
+    }
+    
+    .social-links a:hover {
+        background-color: var(--accent);
+        color: var(--dark);
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    
+    .map-container {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        height: 250px;
+    }
+    
+    .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+    
+    .copyright {
+        text-align: center;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        font-size: 0.9rem;
+        color: #ddd;
+    }
+    
+    /* Responsive Footer */
+    @media (max-width: 992px) {
+        .footer-main {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        
+        .footer-contact-map {
+            gap: 30px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .footer-contact-map {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        
+        .footer-brand,
+        .contact-info {
+            text-align: center;
+        }
+        
+        .footer-brand h3:after,
+        .contact-info h3:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .social-links {
+            justify-content: center;
+        }
+        
+        .footer-links li {
+            justify-content: center;
+        }
+        
+        .map-container {
+            height: 200px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        footer {
+            padding: 40px 0 20px;
+        }
+        
+        .footer-main {
+            gap: 30px;
+        }
+        
+        .footer-contact-map {
+            gap: 25px;
+        }
+        
+        .social-links {
+            gap: 10px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+        }
+    }
+</style>
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const nav = document.querySelector('nav');
+        
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                nav.classList.toggle('active');
+            });
+        }
+        
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+            });
+        });
+        
+        // Form Submission
+        const consultationForm = document.getElementById('consultationForm');
+        if (consultationForm) {
+            consultationForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Terima kasih! Pesan Anda telah terkirim. Tim kami akan menghubungi Anda dalam waktu 1x24 jam.');
+                this.reset();
+            });
+        }
+        
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements for animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateElements = document.querySelectorAll('.service-card, .team-member, .vision, .mission, .contact-item, .milestone-content, .market-trends, .target-market, .competitive-advantage, .advantage-item');
+            
+            animateElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(el);
+            });
+        });
+        
+    </script>
+</body>
+</html>
+

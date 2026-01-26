@@ -1,0 +1,2717 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produk Digital HR - SALMA Solutions | Konsultan Bisnis & Penyedia SDM Profesional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #1a3a5f;
+            --secondary: #4a8c5e;
+            --accent: #f8b739;
+            --light: #f5f7fa;
+            --dark: #2c3e50;
+            --gray: #6c757d;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+            --gradient-primary: linear-gradient(135deg, var(--primary), #2c5282);
+            --gradient-accent: linear-gradient(135deg, var(--accent), #ffcc5c);
+            --gradient-premium: linear-gradient(135deg, #8B4513, #D4AF37, #C0C0C0);
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            font-weight: 400;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            margin-bottom: 1.2rem;
+            color: var(--primary);
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+            color: var(--dark);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--secondary);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 15px rgba(74, 140, 94, 0.3);
+        }
+        
+        .btn:hover {
+            background-color: #3a7a4e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+        }
+        
+        .btn-accent {
+            background-color: var(--accent);
+            color: var(--dark);
+            box-shadow: 0 4px 15px rgba(248, 183, 57, 0.3);
+        }
+        
+        .btn-accent:hover {
+            background-color: #e6a82e;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
+            margin: 20px auto;
+            border-radius: 4px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+        }
+        
+
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 28px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            font-size: 0.95rem;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary);
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.4rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+        
+        /* Product Hero Section */
+        .product-hero {
+            background: 
+                linear-gradient(135deg, rgba(26, 58, 95, 0.85) 0%, rgba(26, 58, 95, 0.9) 100%), 
+                url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 100px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-hero:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, var(--light));
+        }
+        
+        .product-hero h1 {
+            font-size: 2.8rem;
+            color: white;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .product-hero p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 35px;
+            color: rgba(255,255,255,0.9);
+            font-weight: 300;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+        
+        /* Profile Section */
+        .profile-section {
+            background: var(--white);
+            padding: 50px 30px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            margin: -50px auto 60px;
+            max-width: 800px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .profile-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .profile-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+        }
+        
+        .profile-text {
+            font-size: 1rem;
+            color: var(--gray);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        
+        /* Products Section */
+        .products-section {
+            padding: 60px 0;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.05);
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .product-card.premium {
+            border: 2px solid #D4AF37;
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2);
+        }
+        
+        .product-card.premium:before {
+            content: 'PREMIUM';
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background: var(--gradient-premium);
+            color: white;
+            padding: 5px 35px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            transform: rotate(45deg);
+            z-index: 2;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        /* Product Image dengan Foto Asli */
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-image:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(26, 58, 95, 0.3) 0%, rgba(26, 58, 95, 0.1) 100%);
+        }
+        
+        .product-card.premium .product-image:after {
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.3) 0%, rgba(212, 175, 55, 0.2) 100%);
+        }
+        
+        /* Background gambar spesifik untuk setiap produk */
+        .product-card[data-product="hrga-all"] .product-image {
+            background-image: url('thumbnail_product/paket_hrga_all/foto.png');
+        }
+        
+        .product-card[data-product="kpi"] .product-image {
+            background-image: url('thumbnail_product/paket_kpi_toolkits/foto.png');
+        }
+        
+        .product-card[data-product="comben"] .product-image {
+            background-image: url('thumbnail_product/paket_compensation_benefit/foto.png');
+        }
+        
+        .product-card[data-product="ir"] .product-image {
+            background-image: url('thumbnail_product/paket_industrial_relation/foto.png');
+        }
+        
+        .product-card[data-product="recruitment"] .product-image {
+            background-image: url('thumbnail_product/paket_recruitment_selection/foto.png');
+        }
+        
+        .product-card[data-product="hrga-k3"] .product-image {
+            background-image: url('thumbnail_product/paket_hrga_k3/foto.png');
+        }
+        
+        .product-image i {
+            display: none; /* Sembunyikan ikon karena sudah ada gambar */
+        }
+        
+        .product-body {
+            padding: 25px;
+        }
+        
+        .product-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--primary);
+            line-height: 1.3;
+        }
+        
+        .product-subtitle {
+            color: var(--secondary);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .product-description {
+            color: var(--gray);
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .problems-list, .features-list, .benefits-list {
+            margin-bottom: 20px;
+        }
+        
+        .list-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+        
+        .problems-list ul, .features-list ul, .benefits-list ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .problems-list li, .features-list li, .benefits-list li {
+            padding: 6px 0;
+            border-bottom: 1px solid #f1f5f9;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            line-height: 1.4;
+            font-size: 0.85rem;
+        }
+        
+        .problems-list li:last-child, .features-list li:last-child, .benefits-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .problems-list li:before {
+            content: "❌";
+            color: #ef4444;
+            flex-shrink: 0;
+            font-size: 0.9rem;
+        }
+        
+        .features-list li:before {
+            content: "✅";
+            color: #10b981;
+            flex-shrink: 0;
+            font-size: 0.9rem;
+        }
+        
+        .benefits-list li:before {
+            content: "🚀";
+            flex-shrink: 0;
+            font-size: 0.9rem;
+        }
+        
+        .product-footer {
+            padding: 20px 25px;
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .price-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+        
+        .product-card.premium .price {
+            color: #D4AF37;
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            color: var(--gray);
+            font-size: 1rem;
+        }
+        
+        .btn-product {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background: var(--secondary);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            justify-content: center;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 12px rgba(74, 140, 94, 0.25);
+        }
+        
+        .btn-product:hover {
+            background: #3a7a4e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+        }
+        
+        .btn-accent {
+            background: var(--accent);
+            color: var(--dark);
+            box-shadow: 0 4px 12px rgba(248, 183, 57, 0.25);
+        }
+        
+        .btn-accent:hover {
+            background: #e6a82e;
+        }
+        
+        .product-card.premium .btn-product {
+            background: var(--gradient-premium);
+            color: white;
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+        }
+        
+        .product-card.premium .btn-product:hover {
+            background: linear-gradient(135deg, #7a3d0f, #b8941f);
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        
+        .modal-content {
+            background: white;
+            margin: 40px auto;
+            border-radius: 15px;
+            max-width: 900px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: modalFadeIn 0.4s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .modal-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 25px 30px;
+            position: relative;
+        }
+        
+        .modal-header.premium {
+            background: var(--gradient-premium);
+        }
+        
+        .modal-title {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            color: white;
+        }
+        
+        .modal-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 0;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+        
+        .close-modal:hover {
+            background: rgba(255,255,255,0.3);
+            transform: rotate(90deg);
+        }
+        
+        .modal-body {
+            padding: 30px;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+        
+        .modal-section {
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .modal-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .modal-section-title {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .modal-section-title i {
+            color: var(--secondary);
+        }
+        
+        /* Gallery Styles */
+        .product-gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            height: 120px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border-color: var(--secondary);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .modal-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .modal-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #f1f5f9;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            line-height: 1.5;
+        }
+        
+        .modal-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .modal-list li:before {
+            content: "";
+            color: var(--secondary);
+            font-weight: bold;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .modal-footer {
+            padding: 20px 30px;
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .modal-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+        
+        .modal-premium .modal-price {
+            color: #D4AF37;
+        }
+        
+        .modal-original-price {
+            text-decoration: line-through;
+            color: var(--gray);
+            font-size: 1.2rem;
+            margin-right: 10px;
+        }
+        
+        .btn-modal {
+            padding: 14px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-modal-primary {
+            background: var(--secondary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(74, 140, 94, 0.3);
+        }
+        
+        .btn-modal-primary:hover {
+            background: #3a7a4e;
+            transform: translateY(-2px);
+        }
+        
+        .modal-premium .btn-modal-primary {
+            background: var(--gradient-premium);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+        
+        .modal-premium .btn-modal-primary:hover {
+            background: linear-gradient(135deg, #7a3d0f, #b8941f);
+        }
+        
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 3000;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        .lightbox-img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 10px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.5);
+            object-fit: contain;
+        }
+        
+        .lightbox-caption {
+            color: white;
+            margin-top: 15px;
+            font-size: 1.1rem;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        .close-lightbox {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 2.5rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: var(--transition);
+            z-index: 3001;
+        }
+        
+        .close-lightbox:hover {
+            color: var(--accent);
+            transform: rotate(90deg);
+        }
+        
+        /* Promo Banner */
+        .promo-banner {
+            background: linear-gradient(135deg, var(--accent), #ffcc5c);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 50px 0;
+            box-shadow: var(--shadow);
+        }
+        
+        .promo-banner h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .promo-banner p {
+            font-size: 1.1rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 70px 0 25px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 35px;
+            margin-bottom: 45px;
+        }
+        
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 22px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+        
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 45px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .footer-col p {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 18px;
+            font-size: 0.95rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 18px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--accent);
+            color: var(--dark);
+            transform: translateY(-2px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
+            font-size: 0.85rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .products-grid {
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            }
+            
+            .product-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            section {
+                padding: 70px 0;
+            }
+            
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 18px;
+                box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 8px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .modal-content {
+                margin: 20px auto;
+                max-width: 95%;
+            }
+            
+            .product-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .gallery-item {
+                height: 100px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            .product-hero {
+                padding: 120px 0 70px;
+            }
+            
+            .product-hero p {
+                font-size: 1rem;
+            }
+            
+            .profile-section {
+                padding: 40px 25px;
+                margin: -40px auto 50px;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .product-body {
+                padding: 20px;
+            }
+            
+            .product-footer {
+                padding: 18px 20px;
+            }
+            
+            section {
+                padding: 50px 0;
+            }
+            
+            .modal-header {
+                padding: 20px;
+            }
+            
+            .modal-body {
+                padding: 20px;
+            }
+            
+            .modal-footer {
+                padding: 15px 20px;
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .modal-price-section {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+            
+            .product-gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-item {
+                height: 150px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .product-hero .btn {
+                display: block;
+                width: 100%;
+                margin: 8px 0;
+            }
+            
+            .section-title {
+                margin-bottom: 40px;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-avatar {
+                width: 80px;
+                height: 80px;
+                font-size: 1.8rem;
+            }
+            
+            .promo-banner {
+                padding: 30px 20px;
+            }
+            
+            .promo-banner h3 {
+                font-size: 1.5rem;
+            }
+            
+            .modal-title {
+                font-size: 1.5rem;
+            }
+            
+            .modal-subtitle {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SALMA Solutions - <?php echo $current_page == 'index.html' ? 'Beranda' : 'Produk Digital'; ?></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #1a3a5f;
+            --secondary: #4a8c5e;
+            --accent: #f8b739;
+            --light: #f5f7fa;
+            --dark: #2c3e50;
+            --gray: #6c757d;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--secondary);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background-color: #3a7a4e;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .btn-accent {
+            background-color: var(--accent);
+            color: var(--dark);
+        }
+        
+        .btn-accent:hover {
+            background-color: #e6a82e;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        /* Top Bar dengan Jam Operasional */
+        .top-bar {
+            background: linear-gradient(90deg, #1a3a5f 0%, #2c5282 50%, #1a3a5f 100%);
+            color: white;
+            padding: 10px 0;
+            font-size: 0.9rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .top-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.3),
+                transparent
+            );
+            animation: spotlight 10s ease-in-out infinite;
+        }
+        
+        @keyframes spotlight {
+            0% {
+                left: -100%;
+            }
+            15% {
+                left: 100%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+        
+        .top-bar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .business-hours {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .business-hours i {
+            margin-right: 8px;
+            color: var(--accent);
+        }
+        
+        .contact-top {
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-top i {
+            margin-right: 8px;
+            color: var(--accent);
+        }
+        
+        .contact-top a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: color 0.3s;
+        }
+        
+        .contact-top a:hover {
+            color: var(--accent);
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .logo-image {
+            height: 50px;
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #066DB5;
+            position: relative;
+            overflow: hidden;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        
+      
+        
+        .logo-text span {
+            color: #06A1F9;
+            position: relative;
+            z-index: 1;
+        }
+        
+
+        
+
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary);
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        .nav-button {
+            background-color: var(--accent);
+            color: var(--dark);
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-button:hover {
+            background-color: #e6a82e;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .top-bar-container {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                padding: 100px;
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .contact-top {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .contact-top a {
+                margin-left: 0;
+            }
+            
+            .logo-text {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar dengan Jam Operasional -->
+    <div class="top-bar">
+        <div class="container top-bar-container">
+            <div class="business-hours">
+                <i class="far fa-clock"></i>
+                <span>Jam Operasional: Senin - Sabtu: 09:00 - 18:00 | Minggu: Tutup</span>
+            </div>
+            <div class="contact-top">
+                <i class="fas fa-phone-alt"></i>
+                <span>+62 819-0176-3203</span>
+                <a href="mailto:satulangkahmajubersama@gmail.com">
+                    <i class="far fa-envelope"></i> satulangkahmajubersama@gmail.com
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="logo.png" alt="SALMA Solutions" class="logo-image">
+                <div class="logo-text">SALMA <span>Solutions</span></div>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                   <!-- Menu untuk halaman produk -->
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="produk.html" class="nav-button">Produk Digital</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('active');
+        });
+        
+
+    </script>
+</body>
+</html>
+
+<!-- Product Hero Section -->
+<section class="product-hero">
+    <div class="container">
+        <h1>Digital HR Toolkits</h1>
+        <p>Solusi Praktis dan Lengkap untuk Mengelola SDM Perusahaan Anda Tanpa Ribet</p>
+    </div>
+</section>
+
+<!-- Profile Section -->
+<section>
+    <div class="container">
+        <div class="profile-section">
+            <div class="profile-content">
+                <div class="profile-avatar">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <h2>@salmasolution</h2>
+                <p class="profile-text">Business & HR Consultant | Headhunter | Digital HR Products | Helping SMEs grow | Training & Development</p>
+                <p style="font-style: italic; color: var(--primary); font-weight: 500; font-size: 0.95rem;">"Pekerjaan HR & GA Selalu Ribet? Tenang, Ada Solusinya 🚀"</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Products Section -->
+<section class="products-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Produk Digital HR Kami</h2>
+            <p>Solusi lengkap untuk semua kebutuhan HR dan administrasi perusahaan Anda</p>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid">
+            
+            <!-- Product 1: HRGA ALL IN ONE -->
+            <div class="product-card premium" data-product="hrga-all" onclick="openModal('hrgaModal')">
+                <div class="product-image"></div>
+                <div class="product-body">
+                    <h3 class="product-title">HRGA ALL IN ONE</h3>
+                    <p class="product-subtitle">Paket Super Lengkap Semua Kebutuhan HR & GA</p>
+                    <p class="product-description">Paket komprehensif berisi semua template dan dokumen HR & GA yang Anda butuhkan dalam satu paket. Hemat waktu, tenaga, dan biaya dengan solusi terintegrasi ini.</p>
+                </div>
+                <div class="product-footer">
+                    <div class="price-section">
+                        <div class="price">Rp 99.000</div>
+                        <div class="original-price">Rp 599.000</div>
+                    </div>
+                    <p style="text-align: center; color: #ef4444; font-weight: 600; margin-bottom: 12px; font-size: 0.9rem;">PROMO TERBATAS! Hemat 83%</p>
+                    <button class="btn-product" onclick="event.stopPropagation(); window.open('https://lynk.id/salmasolution/kq5md70epy5y', '_blank');">
+                        <i class="fas fa-bolt"></i> BELI SEKARANG
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 2: KPI TOOLKITS -->
+            <div class="product-card" data-product="kpi" onclick="openModal('kpiModal')">
+                <div class="product-image"></div>
+                <div class="product-body">
+                    <h3 class="product-title">KPI TOOLKITS</h3>
+                    <p class="product-subtitle">Solusi Praktis Menyusun KPI Tanpa Pusing & Tanpa Ribet</p>
+                    <p class="product-description">Dalam banyak perusahaan, KPI sering menjadi masalah klasik: karyawan tidak punya target yang jelas, manajer kebingungan menyusun indikator yang tepat, dan akhirnya performa sulit diukur secara objektif.</p>
+                </div>
+                <div class="product-footer">
+                    <div class="price-section">
+                        <div class="price">Rp 99.000</div>
+                        <div class="original-price">Rp 199.000</div>
+                    </div>
+                    <button class="btn-product btn-accent" onclick="event.stopPropagation(); window.open('https://lynk.id/salmasolution', '_blank');">
+                        <i class="fas fa-download"></i> Download Sekarang
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 3: COMPENSATION & BENEFIT TOOLKITS -->
+            <div class="product-card" data-product="comben" onclick="openModal('combenModal')">
+                <div class="product-image"></div>
+                <div class="product-body">
+                    <h3 class="product-title">COMPENSATION & BENEFIT TOOLKITS</h3>
+                    <p class="product-subtitle">Solusi Lengkap Mengelola Gaji, Tunjangan & Keadilan Kerja</p>
+                    <p class="product-description">Mengatur Compensation & Benefit (Comben) adalah salah satu tantangan terbesar bagi HR dan perusahaan. Gaji tidak seragam, tunjangan tidak jelas, karyawan protes.</p>
+                </div>
+                <div class="product-footer">
+                    <div class="price-section">
+                        <div class="price">Rp 69.000</div>
+                        <div class="original-price">Rp 199.000</div>
+                    </div>
+                    <button class="btn-product btn-accent" onclick="event.stopPropagation(); window.open('https://lynk.id/salmasolution', '_blank');">
+                        <i class="fas fa-download"></i> Download Sekarang
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 4: INDUSTRIAL RELATION & LEGAL TOOLKITS -->
+            <div class="product-card" data-product="ir" onclick="openModal('irModal')">
+                <div class="product-image"></div>
+                <div class="product-body">
+                    <h3 class="product-title">INDUSTRIAL RELATION & LEGAL TOOLKITS</h3>
+                    <p class="product-subtitle">Solusi Lengkap Mengelola Hubungan Industrial & Legalitas Perusahaan</p>
+                    <p class="product-description">Mengelola hubungan industrial dan urusan legal perusahaan sering menjadi sumber stres bagi HR dan manajemen. Mulai dari penyusunan perjanjian kerja, penanganan pelanggaran karyawan.</p>
+                </div>
+                <div class="product-footer">
+                    <div class="price-section">
+                        <div class="price">Rp 99.000</div>
+                        <div class="original-price">Rp 199.000</div>
+                    </div>
+                    <button class="btn-product btn-accent" onclick="event.stopPropagation(); window.open('https://lynk.id/salmasolution', '_blank');">
+                        <i class="fas fa-download"></i> Download Sekarang
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 5: RECRUITMENT & SELECTION TOOLKITS -->
+            <div class="product-card" data-product="recruitment" onclick="openModal('recruitmentModal')">
+                <div class="product-image"></div>
+                <div class="product-body">
+                    <h3 class="product-title">RECRUITMENT & SELECTION TOOLKITS</h3>
+                    <p class="product-subtitle">Solusi Lengkap Rekrut Orang yang Tepat, Cepat, dan Tanpa Drama</p>
+                    <p class="product-description">Proses rekrutmen sering menjadi tantangan besar bagi HR maupun owner. CV menumpuk tapi kandidat tidak sesuai, manajer meminta "yang lebih berpengalaman".</p>
+                </div>
+                <div class="product-footer">
+                    <div class="price-section">
+                        <div class="price">Rp 69.000</div>
+                        <div class="original-price">Rp 199.000</div>
+                    </div>
+                    <button class="btn-product btn-accent" onclick="event.stopPropagation(); window.open('https://lynk.id/salmasolution', '_blank');">
+                        <i class="fas fa-download"></i> Download Sekarang
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 6: HRGA & K3 TOOLKITS -->
+            <div class="product-card" data-product="hrga-k3" onclick="openModal('hrgaK3Modal')">
+                <div class="product-image"></div>
+                <div class="product-body">
+                    <h3 class="product-title">HRGA & K3 TOOLKITS</h3>
+                    <p class="product-subtitle">Sistem Lengkap untuk Mengelola Administrasi Umum, Fasilitas & K3</p>
+                    <p class="product-description">Dalam banyak perusahaan, masalah HRGA dan K3 sering muncul bersamaan: administrasi berantakan, fasilitas tidak terawat, SOP tidak jelas, pengajuan kebutuhan GA menumpuk.</p>
+                </div>
+                <div class="product-footer">
+                    <div class="price-section">
+                        <div class="price">Rp 99.000</div>
+                        <div class="original-price">Rp 199.000</div>
+                    </div>
+                    <button class="btn-product btn-accent" onclick="event.stopPropagation(); window.open('https://lynk.id/salmasolution', '_blank');">
+                        <i class="fas fa-download"></i> Download Sekarang
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Promo Banner -->
+        <div class="promo-banner">
+            <h3>🚨 PROMO KHUSUS MINGGU INI SAJA!</h3>
+            <p>Dapatkan semua file dengan harga spesial dan bonus tambahan untuk pembeli pertama!</p>
+            <p style="font-size: 1.rem; font-weight: 600; margin-top: 15px;">📦 Untuk 50 pembeli pertama: Sesi tanya-jawab eksklusif + update dokumen gratis selamanya!</p>
+        </div>
+
+        <!-- Call to Action -->
+        <div style="text-align: center; margin-top: 50px;">
+            <h3 style="margin-bottom: 20px; font-size: 1.8rem;">Order Sekarang Juga!</h3>
+            <p style="font-size: 1.rem; margin-bottom: 12px; font-weight: 500;">📲 Bisa bayar via transfer, QRIS, atau e-wallet</p>
+            <p style="font-size: 1.rem; margin-bottom: 30px; font-weight: 500;">🎁 Setelah pembayaran, semua file langsung dikirim via email atau WA!</p>
+            <a href="https://lynk.id/salmasolution/kq5md70epy5y" class="btn" style="display: inline-flex; width: auto; padding: 20px 35px; font-size: 1.rem; border-radius: 10px;" title="">
+                <i class="fas fa-shopping-cart"></i>KLIK DI SINI SEMUA BERES
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Modal Popups -->
+<!-- KPI TOOLKITS Modal -->
+<div id="kpiModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button class="close-modal" onclick="closeModal('kpiModal')">&times;</button>
+            <h2 class="modal-title">KPI TOOLKITS</h2>
+            <p class="modal-subtitle">Solusi Praktis Menyusun KPI Tanpa Pusing & Tanpa Ribet</p>
+        </div>
+        <div class="modal-body">
+            <!-- Gallery Produk -->
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-images"></i> Gallery Produk</h3>
+                <div class="product-gallery">
+                    <div class="gallery-item">
+                        <img src="thumbnail_product/paket_kpi_toolkits/foto.png" 
+                             alt="KPI Preview 1" 
+                             onclick="openLightbox(this.src, 'KPI Preview 1')">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="thumbnail_product/paket_kpi_toolkits/foto1.png" 
+                             alt="KPI Preview 2" 
+                             onclick="openLightbox(this.src, 'KPI Preview 2')">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="thumbnail_product/paket_kpi_toolkits/foto2.png" 
+                             alt="KPI Preview 3" 
+                             onclick="openLightbox(this.src, 'KPI Preview 3')">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="thumbnail_product/paket_kpi_toolkits/foto3.png" 
+                             alt="KPI Preview 4" 
+                             onclick="openLightbox(this.src, 'KPI Preview 4')">
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-info-circle"></i> Deskripsi Produk</h3>
+                <p>Dalam banyak perusahaan, KPI sering menjadi masalah klasik: karyawan tidak punya target yang jelas, manajer kebingungan menyusun indikator yang tepat, dan akhirnya performa sulit diukur secara objektif. Dampaknya? Produktivitas menurun, kinerja tidak terkontrol, dan pengambilan keputusan jadi lambat.</p>
+                <p>Di sinilah <strong>KPI TOOLKITS</strong> hadir sebagai <em>solusi praktis dan lengkap</em> untuk membantu HR, Supervisor, Manager, dan pemilik bisnis menyusun KPI yang relevan, realistis, dan bisa langsung diterapkan.</p>
+            </div>
+
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-info-circle"></i> Apa itu KPI TOOLKITS?</h3>
+                <p>KPI TOOLKITS adalah paket produk digital HR berisi panduan lengkap untuk menyusun KPI secara mudah, cepat, dan terstruktur. Dibuat berdasarkan praktik terbaik di industri dan pengalaman menangani berbagai perusahaan, paket ini membantu Anda membangun sistem penilaian kinerja yang adil, terukur, dan berdampak.</p>                
+            </div>
+
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-exclamation-triangle"></i> Masalah yang Diselesaikan</h3>
+                <ul class="modal-list">
+                    <li><strong>* Bingung menentukan KPI yang sesuai tiap posisi</strong></li><li>
+                        - Tidak lagi menebak-nebak. Dalam paket ini sudah tersedia contoh KPI untuk berbagai posisi dan departemen.</li>
+                    <li><strong>* Sistem penilaian kinerja tidak jelas</strong></li><li>
+                         - Toolkits ini membantu Anda membuat KPI yang SMART dan langsung bisa dipresentasikan ke atasan atau direview tim.</li>
+                    <li><strong>* HR & Manager menghabiskan waktu berjam-jam menyusun KPI</strong> </li><li>
+                        - Dengan template siap pakai, Anda tinggal menyesuaikan dan menggunakannya.</li>
+                    <li><strong>* Karyawan tidak memahami target kerja</strong> </li><li>
+                        - KPI TOOLKITS menyediakan format penjabaran KPI yang mudah dipahami semua level.</li>
+                </ul>
+            </div>
+
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-gift"></i> Yang Anda Dapatkan</h3>
+                <ul class="modal-list">
+                    <li><strong>* Template KPI untuk Berbagai Posisi</strong> </li><li> - Termasuk Operasional, Admin, HR, Finance, Marketing, Produksi, Warehouse, dan lainnya.</li>
+                    <li><strong>* Format Penilaian Kinerja</strong> </li><li> - Siap digunakan untuk penilaian bulanan, kuartal, maupun tahunan.</li>
+                    <li><strong>* Worksheet Perhitungan KPI</strong> </li><li> - Mudah dalam scoring -- tinggal input, sistem langsung menghitung.</li>
+                    <li><strong>* Panduan Menyusun KPI (Step-by-Step)</strong></li><li> - Penjelasan lengkap dari cara menentukan indikator hingga menetapkan bobot.</li>
+                    <li><strong>* Contoh KPI yang Realistis & Terukur</strong></li><li> - Disusun berdasarkan best practice perusahaan-perusahaan yang sudah terbukti efektif.</li>
+                </ul>
+            </div>
+
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-rocket"></i> Keunggulan KPI TOOLKITS</h3>
+                <ul class="modal-list">
+                    <li><strong>* Plug & Play</strong> — tinggal pakai, tanpa harus membuat dari awal</li>
+                    <li><strong>* Cocok untuk perusahaan kecil hingga besar</strong></li>
+                    <li><strong>* Menghemat waktu HR hingga 80%</strong></li>
+                    <li><strong>* Membantu manajer mengontrol performa tim</strong></li>
+                    <li><strong>* Meningkatkan kualitas evaluasi kinerja secara signifikan</strong></li>
+                    <li><strong>* Dipresentasikan dalam format profesional (Word & Excel)</strong></li>
+                </ul>
+            </div>
+
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-users"></i> Untuk Siapa Produk Ini Cocok?</h3>
+                <ul class="modal-list">
+                    <li>* HR Manager / HRD</li>
+                    <li>* Supervisor & Manager dari berbagai divisi</li>
+                    <li>* Pemilik bisnis yang ingin punya standar kinerja tim</li>
+                    <li>* Konsultan HR</li>
+                    <li>* Perusahaan yang sedang membangun sistem KPI dari nol</li>
+                </ul>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="modal-price-section">
+                <span class="modal-original-price">Rp 199.000</span>
+                <span class="modal-price">Rp 99.000</span>
+            </div>
+            <a href="https://lynk.id/salmasolution" class="btn-modal btn-modal-primary" target="_blank">
+                <i class="fas fa-download"></i> Download Sekarang
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- COMPENSATION & BENEFIT TOOLKITS Modal -->
+<div id="combenModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button class="close-modal" onclick="closeModal('combenModal')">&times;</button>
+            <h2 class="modal-title">COMPENSATION & BENEFIT TOOLKITS</h2>
+            <p class="modal-subtitle">Solusi Lengkap Mengelola Gaji, Tunjangan & Keadilan Kerja</p>
+        </div>
+        <div class="modal-body">
+            <!-- Gallery Produk -->
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-images"></i> Gallery Produk</h3>
+                <div class="product-gallery">
+                    <div class="gallery-item">
+                        <img src="thumbnail_product/paket_compensation_benefit/01_STANDARD OPERATING PROCEDURE PENGGAJIAN.png" 
+                             alt="Compensation Benefit Preview 1" 
+                             onclick="openLightbox(this.src, 'Compensation Benefit Preview 1')">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="thumbnail_product/paket_compensation_benefit/PANDUAN PENGGAJIAN.png" 
+                             alt="Compensation Benefit Preview 2" 
+                             onclick="openLightbox(this.src, 'Compensation Benefit Preview 2')">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="thumbnail_product/paket_compensation_benefit/01 Form-Laporan-Ringkasan-Gaji-Per-Post.png" 
+                             alt="Compensation Benefit Preview 3" 
+                             onclick="openLightbox(this.src, 'Compensation Benefit Preview 3')">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="thumbnail_product/paket_compensation_benefit/foto3.png" 
+                             alt="Compensation Benefit Preview 4" 
+                             onclick="openLightbox(this.src, 'Compensation Benefit Preview 4')">
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-info-circle"></i> Deskripsi Produk</h3>
+                <p>Mengatur Compensation & Benefit (Comben) adalah salah satu tantangan terbesar bagi HR dan perusahaan. Gaji tidak seragam, tunjangan tidak jelas, karyawan protes, dan perusahaan kesulitan menjaga fairness tanpa melanggar regulasi. Semua itu bisa berdampak pada <em>turnover tinggi</em>, <em>kinerja turun</em>, dan <em>morale karyawan merosot</em>.</p>
+                <p>Untuk itu, <strong>Compensation & Benefit Toolkits</strong> hadir sebagai <em>solusi lengkap</em> untuk menyusun sistem penggajian dan tunjangan yang rapi, adil, transparan, dan sesuai kebutuhan perusahaan.</p>
+            </div>
+
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-info-circle"></i> Apa Itu COMPENSATION & BENEFIT TOOLKITS?</h3>
+                <p>Paket digital HR berisi panduan, template, dan dokumen siap pakai untuk membantu HR & manajemen menyusun sistem gaji, tunjangan, insentif, serta struktur benefit yang profesional dan mudah diterapkan.</p>
+                <p>Produk ini dirancang berdasarkan pengalaman mengelola HR di berbagai perusahaan sehingga bisa langsung diadaptasi ke bisnis Anda tanpa harus membuat semuanya dari nol.</p>
+            </div>            
+            
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-exclamation-triangle"></i> Masalah yang Diselesaikan</h3>
+                <ul class="modal-list">
+                    <li><strong>* Struktur gaji tidak jelas dan tidak ada standar</strong> </li><li> - Toolkits menyediakan <em>struktur & skala upah</em> yang siap disesuaikan dengan posisi di perusahaan.</li>
+                    <li><strong>* Karyawan protes tentang keadilan penggajian</strong> </li><li> - Dengan format dan kebijakan yang jelas, perusahaan bisa memberikan <em>transparansi</em> pada sistem penggajian.</li>
+                    <li><strong>* Tunjangan tidak seragam & tidak punya formula</strong></li><li> - Produk ini menyediakan template perhitungan tunjangan (transport, makan, jabatan, skill allowance, dan lainnya).</li>
+                    <li><strong>* Sulit merancang insentif, bonus & benefit yang masuk akal</strong> </li><li> - Toolkits sudah menyediakan <em>formula insentif berdasarkan KPI, target, dan performa</em> masing-masing departemen.</li>
+                    <li><strong>* HR menghabiskan banyak waktu membuat kebijakan dari nol</strong></li><li> - Dengan dokumen siap pakai, HR cukup menyesuaikan → langsung bisa digunakan.</li>
+                </ul>
+            </div>
+
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-gift"></i> Yang Anda Dapatkan</h3>
+                <ul class="modal-list">
+                    <li><strong>* Template Struktur & Skala Upah (Pay Structure)</strong></li><li> - Berisi contoh grade, level, range gaji, dan standar penetapan.</li>
+                    <li><strong>* Kebijakan Tunjangan Lengkap</strong></li><li> - Transport, makan, komunikasi, jabatan, lembur, kehadiran, perjalanan dinas, dan lainnya.</li>
+                    <li><strong>* Format Perhitungan Insentif & Bonus</strong></li><li> - Untuk Sales, Produksi, Admin, dan berbagai posisi lainnya.</li>
+                    <li><strong>* Panduan Menyusun Paket Benefit Karyawan</strong></li><li> - Termasuk BPJS, cuti, fasilitas kerja, hingga program kesejahteraan.</li>
+                    <li><strong>* Template Surat & Formulir Terkait C&B</strong></li><li> - Seperti penetapan gaji, review gaji, permintaan tunjangan, dan lainnya.</li>
+                    <li><strong>* Worksheet Perhitungan Gaji & Tunjangan</strong></li><li> - Excel otomatis---tinggal input angka, hasilnya keluar.</li>
+                    <li><strong>* Kumpulan Regulasi Terkait Upah & C&B</strong></li><li> - Agar perusahaan tetap patuh pada aturan ketenagakerjaan.</li>
+                </ul>
+            </div>
+
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-rocket"></i> Keunggulan Comben Toolkits</h3>
+                <ul class="modal-list">
+                    <li><strong>* Super lengkap</strong> — semua aspek C&B tersedia dalam satu paket</li>
+                    <li><strong>* Bisa langsung dipakai</strong>, hanya tinggal edit nama perusahaan</li>
+                    <li><strong>* Menghemat waktu HR hingga 80%</strong></li>
+                    <li><strong>* Membantu perusahaan menciptakan fairness dalam sistem pembayaran</strong></li>
+                    <li><strong>* Menurunkan risiko konflik & komplain dari karyawan</strong></li>
+                    <li><strong>* Didesain berdasarkan praktik terbaik di perusahaan profesional</strong></li>
+                </ul>
+            </div>
+            
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-users"></i> Cocok Untuk Siapa?</h3>
+                <ul class="modal-list">
+                    <li>* HRD / HR Manager</li>
+                    <li>* Business Owner</li>
+                    <li>* Supervisor & Manager</li>
+                    <li>* Konsultan HR</li>
+                    <li>* Perusahaan yang ingin sistem penggajian lebih terstruktur</li>
+                </ul>
+            </div>
+            
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-users"></i> Apa hasil yang Akan Anda Dapatkan?</h3>
+                <ul class="modal-list">
+                    <li>* Sistem gaji lebih tertata dan adil</li>
+                    <li>* Tunjangan & benefit lebih jelas dan dapat dipertanggungjawabkan</li>
+                    <li>* Proses review gaji lebih mudah & profesional</li>
+                    <li>* Karyawan lebih puas karena memiliki sistem C&B yang transparan</li>
+                    <li>* Perusahaan lebih kompetitif dalam menarik & mempertahankan talent terbaik</li>
+                </ul>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="modal-price-section">
+                <span class="modal-original-price">Rp 199.000</span>
+                <span class="modal-price">Rp 69.000</span>
+            </div>
+            <a href="https://lynk.id/salmasolution" class="btn-modal btn-modal-primary" target="_blank">
+                <i class="fas fa-download"></i> Download Sekarang
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- INDUSTRIAL RELATION & LEGAL TOOLKITS Modal -->
+<div id="irModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button class="close-modal" onclick="closeModal('irModal')">&times;</button>
+            <h2 class="modal-title">INDUSTRIAL RELATION & LEGAL TOOLKITS</h2>
+            <p class="modal-subtitle">Solusi Lengkap Mengelola Hubungan Industrial & Legalitas Perusahaan Tanpa Ribet</p>
+        </div>
+        <div class="modal-body">
+            <!-- Gallery Produk -->
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-images"></i> Gallery Produk</h3>
+                <div class="product-gallery">
+                    <div class="gallery-item">
+                        <img src="thumbnail_product/paket_industrial_relation/CONTOH SP.png" 
+                             alt="Industrial Relation Preview 1" 
+                             onclick="openLightbox(this.src, 'Industrial Relation Preview 1')">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="thumbnail_product/paket_industrial_relation/PKWT.png" 
+                             alt="Industrial Relation Preview 2" 
+                             onclick="openLightbox(this.src, 'Industrial Relation Preview 2')">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="thumbnail_product/paket_industrial_relation/SURAT TANDA TERIMA GAJI KARYAWAN.png" 
+                             alt="Industrial Relation Preview 3" 
+                             onclick="openLightbox(this.src, 'Industrial Relation Preview 3')">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="thumbnail_product/paket_industrial_relation/foto3.png" 
+                             alt="Industrial Relation Preview 4" 
+                             onclick="openLightbox(this.src, 'Industrial Relation Preview 4')">
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-info-circle"></i> Deskripsi Produk</h3>
+                <p>Mengelola hubungan industrial dan urusan legal perusahaan sering menjadi sumber stres bagi HR dan manajemen. Mulai dari penyusunan perjanjian kerja, penanganan pelanggaran karyawan, perselisihan hubungan industrial, hingga kepatuhan pada aturan ketenagakerjaan—semuanya membutuhkan ketelitian dan dasar hukum yang kuat.</p>
+                <p>Kesalahan kecil bisa berakibat besar: <strong>sanksi hukum, konflik dengan karyawan, gugatan, downtime operasional</strong>, hingga rusaknya reputasi perusahaan.</p>
+                <p>Untuk itu, <strong>Industrial Relation & Legal Toolkits</strong> hadir sebagai <em>solusi lengkap dan aman</em> untuk membantu perusahaan menangani seluruh persoalan hubungan industrial dan legal ketenagakerjaan secara profesional.</p>
+            </div>
+            
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-info-circle"></i> Apa Itu INDUSTRIAL RELATION & LEGAL TOOLKITS?</h3>
+                <p>Ini adalah paket digital HR berisi dokumen, kebijakan, template legal dan panduan yang dirancang khusus untuk membantu perusahaan mengelola hubungan industrial, regulasi ketenagakerjaan, dan kasus-kasus legal secara cepat, tepat, dan sesuai hukum berlaku.</p>
+                <p>Disusun berdasarkan pengalaman praktis di lapangan dan standar HR profesional—sehingga Anda tidak perlu membuat dari nol atau takut salah langkah.</p>
+            </div>   
+
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-exclamation-triangle"></i> Masalah yang Diselesaikan</h3>
+                <ul class="modal-list">
+                    <li><strong>* Kesulitan membuat dokumen legal ketenagakerjaan</strong></li><li> - Produk ini menyediakan <strong>puluhan template perjanjian & surat resmi</strong> yang tinggal disesuaikan.</li>
+                    <li><strong>* Bingung menangani pelanggaran karyawan</strong></li><li> - Tersedia <strong>SOP, alur tindakan disiplin, hingga contoh surat teguran</strong> yang siap digunakan.</li>
+                    <li><strong>* Tidak ada pedoman hubungan industrial yang jelas</strong></li><li> - Toolkits berisi <strong>kebijakan lengkap</strong> yang memperkuat aturan perusahaan dan meminimalisir konflik.</li>
+                    <li><strong>* Takur salah dalam penerapan aturan hukum</strong></li><li> - Dilengkapi <strong>ringkasan regulasi ketenagakerjaan terbaru</strong> yang sudah dirangkum secara sederhana.</li>
+                    <li><strong>* Kasus perselisihan sulit dikendalikan</strong></li><li> - Paket ini memberikan <strong>panduan handling dispute</strong> dan dokumentasi yang rapi untuk menghindari eskalasi.</li>
+                </ul>
+            </div>
+
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-gift"></i> Yang Anda Dapatkan</h3>
+                <ul class="modal-list">
+                    <li><strong>* Dokumen & Template Perjanjian Kerja</strong></li><li> - PKWT, PKWTT, Perjanjian Pemagangan, Perjanjian Paruh Waktu, Perjanjian Dinas & Rahasia Perusahaan, Kesepakatan Pengakhiran Hubungan Kerja (mutual agreement)</li>
+                    <li><strong>* Template Surat-Surat Legal & Disiplin</strong></li><li> - Surat Teguran (SP1 -- SP3), Surat Panggilan Klarifikasi, Berita Acara Pemeriksaan, Surat Rekomendasi Sanksi, Surat Pernyataan Karyawan</li>
+                    <li><strong>* Kebijakan & SOP Hubungan Industrial</strong></li><li> - Tata Tertib Perusahaan, Kode Etik Karyawan, Kebijakan Disiplin, Mekanisme Penyelesaian Perselisihan, SOP Penanganan Komplain Karyawan</li>
+                    <li><strong>* Panduan Regulasi Ketenagakerjaan</strong></li><li> - Ringkasan UU Ketenagakerjaan, Peraturan turunan & hak dasar pekerja, Panduan pesangon, PHK & kompensasi sesuai aturan</li>
+                    <li><strong>* Dokumen Pendukung Legal Perusahaan</strong></li><li> - Formulir investigasi, Template risalah mediasi, Dokumen komunikasi resmi dengan karyawan</li>
+                </ul>
+                <p><em>Semua dalam format <strong>Word & PDF</strong>, mudah disesuaikan, dan langsung siap pakai.</em></p>
+            </div>
+
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-rocket"></i> Keunggulan</h3>
+                <ul class="modal-list">
+                    <li><strong>* Menghemat waktu HR & legal hingga 80%</strong></li>
+                    <li><strong>* Mengurangi risiko kesalahan penerapan hukum</strong></li>
+                    <li><strong>* Membantu perusahaan lebih aman dan patuh regulasi</strong></li>
+                    <li><strong>* Meminimalkan konflik & perselisihan dengan karyawan</strong></li>
+                    <li><strong>* Dokumen disusun berdasarkan praktik terbaik HR & legal</strong></li>
+                    <li><strong>* Meningkatkan profesionalisme di mata karyawan & manajemen</strong></li>
+                </ul>
+            </div>
+            
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-users"></i> Cocok Untuk Siapa?</h3>
+                <ul class="modal-list">
+                    <li>* HRD / HR Manager</li>
+                    <li>* Industrial Relation Specialist</li>
+                    <li>* Business Owner</li>
+                    <li>* Legal Staff</li>
+                    <li>* Konsultan HR</li>
+                </ul>
+            </div>
+            
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-users"></i> Apa hasil yang Akan Anda Dapatkan?</h3>
+                <ul class="modal-list">
+                    <li>* Risiko perselisihan menurun drastis</li>
+                    <li>* Semua proses disiplin dan legal jadi rapi & terdokumentasi</li>
+                    <li>* Perusahaan lebih patuh hukum & profesional</li>
+                    <li>* Karyawan memahami aturan dan konsekuensi dengan lebih jelas</li>
+                    <li>* HR tidak lagi pusing membuat dokumen dari nol</li>
+                </ul>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="modal-price-section">
+                <span class="modal-original-price">Rp 199.000</span>
+                <span class="modal-price">Rp 99.000</span>
+            </div>
+            <a href="https://lynk.id/salmasolution" class="btn-modal btn-modal-primary" target="_blank">
+                <i class="fas fa-download"></i> Download Sekarang
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- RECRUITMENT & SELECTION TOOLKITS Modal -->
+<div id="recruitmentModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button class="close-modal" onclick="closeModal('recruitmentModal')">&times;</button>
+            <h2 class="modal-title">RECRUITMENT & SELECTION TOOLKITS</h2>
+            <p class="modal-subtitle">Solusi Lengkap Rekrut Orang yang Tepat, Cepat, dan Tanpa Drama</p>
+        </div>
+        <div class="modal-body">
+            <!-- Gallery Produk -->
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-images"></i> Gallery Produk</h3>
+                <div class="product-gallery">
+                    <div class="gallery-item">
+                        <img src="thumbnail_product/paket_recruitment_selection/ASSESMEN 360.png" 
+                             alt="Recruitment Preview 1" 
+                             onclick="openLightbox(this.src, 'Recruitment Preview 1')">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="thumbnail_product/paket_recruitment_selection/PANDUAN INTERVIEW SALES MARKETINGMANAGER.png" 
+                             alt="Recruitment Preview 2" 
+                             onclick="openLightbox(this.src, 'Recruitment Preview 2')">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="thumbnail_product/paket_recruitment_selection/SOP REQUITMENT EXTERNAL.png" 
+                             alt="Recruitment Preview 3" 
+                             onclick="openLightbox(this.src, 'Recruitment Preview 3')">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="thumbnail_product/paket_recruitment_selection/foto3.png" 
+                             alt="Recruitment Preview 4" 
+                             onclick="openLightbox(this.src, 'Recruitment Preview 4')">
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-info-circle"></i> Deskripsi Produk</h3>
+                <p>Proses rekrutmen sering menjadi tantangan besar bagi HR maupun owner. CV menumpuk tapi kandidat tidak sesuai, manajer meminta "yang lebih berpengalaman", wawancara tidak terstandar, hingga kandidat hilang (ghosting) setelah ditawari kerja. Akibatnya, <strong>posisi kosong terlalu lama</strong>, produktivitas turun, dan biaya perekrutan membengkak.</p>
+                <p><strong>Recruitment & Selection Toolkits</strong> hadir untuk menghapus semua kerumitan itu—menyediakan <em>panduan, template, dan sistem siap pakai</em> agar Anda bisa merekrut kandidat terbaik dengan efisien, objektif, dan profesional.</p>
+            </div>
+
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-exclamation-triangle"></i> Masalah yang Diselesaikan</h3>
+                <ul class="modal-list">
+                    <li><strong>* Kandidat yang datang tidak sesuai kebutuhan</strong></li><li> - Ada <strong>job profile & job description</strong> yang jelas, sehingga Anda menarik kandidat yang tepat.</li>
+                    <li><strong>* Proses rekrutmen berantakan dan tidak konsisten</strong></li><li> - Toolkits menyediakan <strong>SOP & alur proses rekrutmen lengkap</strong> dari awal sampai onboarding.</li>
+                    <li><strong>* HR bingung menilai kandidat secara objektif</strong></li><li> - Tersedia <strong>form penilaian wawancara berbasis kompetensi & scoring system</strong>.</li>
+                    <li><strong>* Manajer dan HR tidak satu suara</strong></li><li> - Toolkits memberikan <strong>template manpower request</strong> dan pedoman persetujuan kebutuhan SDM.</li>
+                    <li><strong>* Waktu rekrutmen terlalu lama</strong></li><li> - Dengan <em>template ready-to-use</em>, semua berjalan lebih cepat dan rapi.</li>
+                    <li><strong>* Sulit menemukan kandidat berkualitas</strong></li><li> - Termasuk <strong>panduan sourcing, posting lowongan, dan screening CV efektif</strong>.</li>
+                </ul>
+            </div>
+
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-gift"></i> Yang Anda Dapatkan</h3>
+                <ul class="modal-list">
+                    <li><strong>* Dokumen & Template Rekrutmen Siap Pakai</strong></li><li> - Template Posting Lowongan, Form Request Karyawan (Manpower Request), Job Description & Job Requirement Format, Job Profile (Kompetensi & Kualifikasi)</li>
+                    <li><strong>* SOP & Alur Rekrutmen Lengkap</strong></li><li> - SOP Rekrutmen dari A-Z, Alur seleksi & approval, SLA waktu rekrutmen agar lebih efisien</li>
+                    <li><strong>* Form & Tools Seleksi Kandidat</strong></li><li> - Form Screening CV, Form Interview (General, HR, User), Form Behavioral Interview (BEI), Scoring & Weighting System, Template Tes Pengetahuan (Technical Test)</li>
+                    <li><strong>* Dokumen Wawancara & Konfirmasi</strong></li><li> - Script Interview untuk HR & User, Template Undangan Interview, Template Offering Letter, Template Penolakan Kandidat yang Profesional</li>
+                    <li><strong>* Panduan Lengkap Recruitment Strategy</strong></li><li> - Cara mencari kandidat potensial, Sumber talent (online & offline), Teknik interview berbasis kompetensi, Cara membaca CV secara efektif</li>
+                </ul>
+                <p><em>Semua format bisa langsung diedit dan digunakan sesuai kebutuhan perusahaan.</em></p>
+            </div>
+
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-rocket"></i> Keunggulan</h3>
+                <ul class="modal-list">
+                    <li><strong>* Praktis</strong> — tinggal edit dan terapkan</li>
+                    <li><strong>* Menghemat waktu rekrutmen hingga 70%</strong></li>
+                    <li><strong>* Bikin proses seleksi lebih objektif dan terukur</strong></li>
+                    <li><strong>* Mengurangi risiko salah pilih kandidat</strong></li>
+                    <li><strong>* Meningkatkan profesionalisme HR di mata manajemen</strong></li>
+                    <li><strong>* Cocok untuk perusahaan kecil, menengah maupun besar</strong></li>
+                </ul>
+            </div>
+            
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-users"></i> Cocok Untuk Siapa?</h3>
+                <ul class="modal-list">
+                    <li>* HR Recruitment & Talent Acquisition</li>
+                    <li>* HR Manager</li>
+                    <li>* Business Owner</li>
+                    <li>* Konsultan HR</li>
+                    <li>* Perusahaan baru yang belum punya sistem rekrutmen</li>
+                    <li>* Perusahaan berkembang yang butuh proses rekrutmen lebih efisien</li>
+                </ul>
+            </div>
+            
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-users"></i> Hasil yang Akan Anda Rasakan Setelah Menggunakan Paket Ini</h3>
+                <ul class="modal-list">
+                    <li>* Kandidat yang masuk lebih berkualitas</li>
+                    <li>* Proses rekrutmen cepat & terstruktur</li>
+                    <li>* HR dan manajer paham tugas masing-masing</li>
+                    <li>* Penilaian kandidat lebih objektif</li>
+                    <li>* Risiko salah rekrut jauh berkurang</li>
+                </ul>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="modal-price-section">
+                <span class="modal-original-price">Rp 199.000</span>
+                <span class="modal-price">Rp 69.000</span>
+            </div>
+            <a href="https://lynk.id/salmasolution" class="btn-modal btn-modal-primary" target="_blank">
+                <i class="fas fa-download"></i> Download Sekarang
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- HRGA & K3 TOOLKITS Modal -->
+<div id="hrgaK3Modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button class="close-modal" onclick="closeModal('hrgaK3Modal')">&times;</button>
+            <h2 class="modal-title">HRGA & K3 TOOLKITS</h2>
+            <p class="modal-subtitle">Sistem Lengkap untuk Mengelola Administrasi Umum, Fasilitas Perusahaan, dan K3 Tanpa Kacau & Tanpa Repot</p>
+        </div>
+        <div class="modal-body">
+            <!-- Gallery Produk -->
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-images"></i> Gallery Produk</h3>
+                <div class="product-gallery">
+                    <div class="gallery-item">
+                        <img src="thumbnail_product/paket_hrga_k3/CONTOH_SURAT_PERJANJIAN.png" 
+                             alt="HRGA K3 Preview 1" 
+                             onclick="openLightbox(this.src, 'HRGA K3 Preview 1')">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="thumbnail_product/paket_hrga_k3/SOP GA.png" 
+                             alt="HRGA K3 Preview 2" 
+                             onclick="openLightbox(this.src, 'HRGA K3 Preview 2')">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="thumbnail_product/paket_hrga_k3/SOP HRD.png" 
+                             alt="HRGA K3 Preview 3" 
+                             onclick="openLightbox(this.src, 'HRGA K3 Preview 3')">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="thumbnail_product/paket_hrga_k3/foto3.png" 
+                             alt="HRGA K3 Preview 4" 
+                             onclick="openLightbox(this.src, 'HRGA K3 Preview 4')">
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-info-circle"></i> Deskripsi Produk</h3>
+                <p>Dalam banyak perusahaan, masalah HRGA dan K3 sering muncul bersamaan: administrasi berantakan, fasilitas tidak terawat, SOP tidak jelas, pengajuan kebutuhan GA menumpuk, hingga kecelakaan kerja yang seharusnya bisa dicegah. Lebih parah lagi, banyak perusahaan <strong>tidak punya dokumentasi standar</strong>, sehingga audit atau inspeksi mendadak jadi mimpi buruk.</p>
+                <p><strong>HRGA & K3 Toolkits</strong> hadir sebagai <em>solusi digital lengkap</em> untuk membantu perusahaan membangun sistem HR General Affairs dan Keselamatan & Kesehatan Kerja yang rapi, aman, dan profesional.</p>
+            </div>
+
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-info-circle"></i> Apa Itu HRGA & K3 TOOLKITS?</h3>
+                <p>Paket digital berisi kumpulan dokumen, SOP, template administrasi GA, form K3, checklist, dan pedoman keselamatan yang siap digunakan untuk memperkuat tata kelola HRGA dan K3 di perusahaan.</p>
+                <p>Semua disusun berdasarkan standar industri, praktik HRGA terbaik, serta acuan K3 yang umum digunakan di lingkungan kerja.</p>
+            </div>
+
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-exclamation-triangle"></i> Masalah yang Diselesaikan</h3>
+                <ul class="modal-list">
+                    <li><strong>* Administrasi HRGA berantakan</strong></li><li> - Produk menyediakan template lengkap untuk inventaris, pengajuan barang, maintenance, dan laporan GA.</li>
+                    <li><strong>* Tidak ada SOP K3 yang jelas</strong></li><li> - Disediakan SOP keselamatan kerja, alur P3K, evakuasi, APD, hingga penanganan insiden.</li>
+                    <li><strong>* Audit internal/eksternal menjadi momok</strong></li><li> - Dengan checklist & dokumentasi yang lengkap, proses audit menjadi lebih mudah dan terstruktur.</li>
+                    <li><strong>* Kecelakaan kerja meningkat karena tidak ada pedoman</strong></li><li> - Toolkits menyediakan <strong>risk assessment, JSA (Job Safety Analysis), dan form laporan insiden.</strong></li>
+                    <li><strong>* Fasilitas kantor & operasional tidak terkelola</strong></li><li> - Ada dokumen untuk <strong>pengelolaan aset, kendaraan, gedung, hingga kebersihan & keamanan.</strong></li>
+                    <li><strong>* Komunikasi HRGA sering terhambat</strong></li><li> - Termasuk template memo, surat pemberitahuan, form permintaan layanan GA, dan dokumentasi kerja lainnya.</li>
+                </ul>
+            </div>
+
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-gift"></i> Yang Anda Dapatkan</h3>
+                <ul class="modal-list">
+                    <li><strong>* Dokumen & Template Administrasi HRGA</strong></li><li> - Form Pengajuan Barang/ATK, Form Pengajuan Lembur GA, Form Pengajuan Perbaikan/ Maintenance, Form Inventaris & Serah Terima Barang, Logbook Kendaraan Operasional, Form Monitoring Vendor, Template Memo Internal & Pemberitahuan</li>
+                    <li><strong>* SOP & Kebijakan HRGA</strong></li><li> - SOP Pengelolaan Fasilitas, SOP Maintenance Gedung, SOP Pengelolaan Aset Perusahaan, SOP Pengamanan & Tamu, SOP Kebersihan & Outsourcing</li>
+                    <li><strong>* Dokumen K3 Lengkap</strong></li><li> - SOP K3 Umum, SOP Penggunaan APD, SOP Penanganan Kecelakaan Kerja, SOP Evakuasi Darurat, SOP Pengelolaan Limbah & Bahan Berbahaya (jika relevan)</li>
+                    <li><strong>* Form & Checklist K3</strong></li><li> - Form Identifikasi Bahaya (HIRARC), Job Safety Analysis (JSA), Form Inspeksi APD, Form Laporan Kecelakaan Kerja, Checklist P3K, Checklist Hydrant, APAR, Emergency Exit, Checklist Housekeeping Area Kerja</li>
+                    <li><strong>* Dokumen Pendukung untuk Audit & Kepatuhan</strong></li><li> - Laporan Inspeksi Rutin, Form Safety Briefing, Form Safety Induction, Template Meeting K3 (Safety Talk), Laporan Investigasi Insiden</li>
+                </ul>
+                <p><em>Semua file <strong>siap edit, siap pakai</strong>, dan bisa disesuaikan dengan kondisi perusahaan Anda.</em></p>
+            </div>
+
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-rocket"></i> Keunggulan</h3>
+                <ul class="modal-list">
+                    <li><strong>* Menjadikan tata kelola HRGA jauh lebih rapi dan terkontrol</strong></li>
+                    <li><strong>* Proses maintenance & fasilitas lebih teratur</strong></li>
+                    <li><strong>* Risk assessment dan K3 menjadi lebih mudah diterapkan</strong></li>
+                    <li><strong>* Meningkatkan kepatuhan terhadap standar keselamatan</strong></li>
+                    <li><strong>* Mengurangi potensi kecelakaan kerja</strong></li>
+                    <li><strong>* Membantu HRGA bekerja lebih efisien dan profesional</strong></li>
+                    <li><strong>* Mengurangi waktu pembuatan dokumen hingga 70%</strong></li>
+                </ul>
+            </div>
+            
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-users"></i> Untuk Siapa Produk Ini Cocok?</h3>
+                <ul class="modal-list">
+                    <li>* HR General Affairs</li>
+                    <li>* HRGA Manager & Staff</li>
+                    <li>* Safety Officer / K3 Staff</li>
+                    <li>* Facility & Maintenance Team</li>
+                    <li>* Supervisor/Manager Operasional</li>
+                    <li>* Business Owner yang ingin sistem GA & K3 lebih tertata</li>
+                </ul>
+            </div>
+            
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-users"></i> Hasil yang Akan Anda Rasakan Setelah Menggunakan Paket Ini</h3>
+                <ul class="modal-list">
+                    <li>* Administrasi GA yang jauh lebih rapi dan terdokumentasi</li>
+                    <li>* Penerapan K3 yang konsisten dan sesuai standar</li>
+                    <li>* Perusahaan lebih siap audit, inspeksi, atau kunjungan mendadak</li>
+                    <li>* Risiko insiden menurun secara signifikan</li>
+                    <li>* HRGA bekerja lebih cepat, efisien, dan profesional</li>
+                </ul>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="modal-price-section">
+                <span class="modal-original-price">Rp 199.000</span>
+                <span class="modal-price">Rp 99.000</span>
+            </div>
+            <a href="https://lynk.id/salmasolution" class="btn-modal btn-modal-primary" target="_blank">
+                <i class="fas fa-download"></i> Download Sekarang
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- HRGA ALL IN ONE Modal -->
+<div id="hrgaModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header premium">
+            <button class="close-modal" onclick="closeModal('hrgaModal')">&times;</button>
+            <h2 class="modal-title">HRGA ALL IN ONE</h2>
+            <p class="modal-subtitle">Paket Super Lengkap Semua Kebutuhan HR & GA</p>
+        </div>
+        <div class="modal-body">
+            <!-- Gallery Produk -->
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-images"></i> Gallery Produk</h3>
+                <div class="product-gallery">
+                    <div class="gallery-item">
+                        <img src="thumbnail_product/paket_hrga_all/foto.png" 
+                             alt="HRGA All Preview 1" 
+                             onclick="openLightbox(this.src, 'HRGA All Preview 1')">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="thumbnail_product/paket_hrga_all/foto1.png" 
+                             alt="HRGA All Preview 2" 
+                             onclick="openLightbox(this.src, 'HRGA All Preview 2')">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="thumbnail_product/paket_hrga_all/foto2.png" 
+                             alt="HRGA All Preview 3" 
+                             onclick="openLightbox(this.src, 'HRGA All Preview 3')">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="thumbnail_product/paket_hrga_all/foto3.png" 
+                             alt="HRGA All Preview 4" 
+                             onclick="openLightbox(this.src, 'HRGA All Preview 4')">
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-info-circle"></i> Deskripsi Produk</h3>
+                <p>Paket komprehensif berisi semua template dan dokumen HR & GA yang Anda butuhkan dalam satu paket. Hemat waktu, tenaga, dan biaya dengan solusi terintegrasi ini.</p>
+                <p>Dengan <strong>HRGA ALL IN ONE</strong>, Anda mendapatkan akses ke seluruh toolkit HR dan GA dalam satu pembelian, dengan harga yang sangat terjangkau dibandingkan jika membeli masing-masing produk secara terpisah.</p>
+            </div>
+
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-gift"></i> Yang Anda Dapatkan</h3>
+                <ul class="modal-list">
+                    <li><strong>* Template PKWT, Harian Lepas, dan Magang</strong> - Semua dokumen perjanjian kerja yang lengkap</li>
+                    <li><strong>* Format SOP HRGA dan Berbagai Bagian</strong> - Standard Operating Procedure untuk semua divisi</li>
+                    <li><strong>* Panduan & Template Penilaian Kinerja Karyawan</strong> - Sistem penilaian yang komprehensif</li>
+                    <li><strong>* Payroll Toolkits + Kalkulator THR</strong> - Sistem penggajian yang mudah dan akurat</li>
+                    <li><strong>* 200+ Template Jobdesk & Form Pendukung</strong> - Job description lengkap untuk semua posisi</li>
+                    <li><strong>* 200+ Template KPI Berbagai Posisi/Jabatan</strong> - Key Performance Indicator yang terukur</li>
+                    <li><strong>* BONUS PA Base KPI</strong> - Performance Appraisal berbasis KPI</li>
+                    <li><strong>* Dokumen K3 Lengkap & Checklist</strong> - Keselamatan dan Kesehatan Kerja yang komprehensif</li>
+                    <li><strong>* Template Rekrutmen & Seleksi</strong> - Sistem rekrutmen dari awal hingga akhir</li>
+                    <li><strong>* Struktur Gaji & Benefit Package</strong> - Sistem kompensasi yang kompetitif</li>
+                </ul>
+            </div>
+
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-rocket"></i> Keunggulan HRGA ALL IN ONE</h3>
+                <ul class="modal-list">
+                    <li><strong>* Hemat Biaya</strong> - Dapatkan semua produk dengan harga yang sangat terjangkau</li>
+                    <li><strong>* Lengkap</strong> - Semua kebutuhan HR dan GA dalam satu paket</li>
+                    <li><strong>* Terintegrasi</strong> - Sistem yang saling terhubung dan konsisten</li>
+                    <li><strong>* Mudah Disesuaikan</strong> - Template yang fleksibel untuk berbagai jenis perusahaan</li>
+                    <li><strong>* Menghemat Waktu</strong> - Tidak perlu membuat dari awal, tinggal edit dan gunakan</li>
+                    <li><strong>* Profesional</strong> - Dokumen yang sesuai dengan standar industri</li>
+                </ul>
+            </div>
+
+            <div class="modal-section">
+                <h3 class="modal-section-title"><i class="fas fa-users"></i> Untuk Siapa Produk Ini Cocok?</h3>
+                <ul class="modal-list">
+                    <li>* Perusahaan yang baru berdiri dan membutuhkan sistem HR yang lengkap</li>
+                    <li>* HR Manager yang ingin menyederhanakan pekerjaan administrasi</li>
+                    <li>* Business Owner yang ingin memiliki sistem HR yang terstruktur</li>
+                    <li>* Konsultan HR yang membutuhkan template lengkap untuk klien</li>
+                    <li>* Perusahaan yang ingin standardisasi proses HR dan GA</li>
+                </ul>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="modal-price-section">
+                <span class="modal-original-price">Rp 599.000</span>
+                <span class="modal-price">Rp 99.000</span>
+            </div>
+            <p style="text-align: center; color: #ef4444; font-weight: 600; margin-bottom: 12px; font-size: 0.9rem; width: 100%;">PROMO TERBATAS! Hemat 83%</p>
+            <a href="https://lynk.id/salmasolution/kq5md70epy5y" class="btn-modal btn-modal-primary" target="_blank">
+                <i class="fas fa-bolt"></i> BELI SEKARANG
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <h3>SALMA Solutions</h3>
+                    <p>PT Satu Langkah Maju Bersama</p>
+                    <p>Konsultan Bisnis | Headhunter | Produk Digital HR</p>
+                    <div class="social-links">
+                        <a href="https://wa.me/6281901763203" target="_blank" title="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://instagram.com/satulangkah_bersama" target="_blank" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="mailto:satulangkahmajubersama@gmail.com" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://goo.gl/maps/gX8YrTqo2JQesePCA" target="_blank" title="Lokasi">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-contact-map">
+                    <div class="contact-info">
+                        <h3>Kontak & Lokasi</h3>
+                        <ul class="footer-links">
+                            <li>
+                                <i class="fab fa-whatsapp"></i> 
+                                <a href="https://wa.me/6281901763203" target="_blank">+62 819-0176-3203</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope"></i> 
+                                <a href="mailto:satulangkahmajubersama@gmail.com">satulangkahmajubersama@gmail.com</a>
+                            </li>
+                            <li>
+                                <i class="fab fa-instagram"></i> 
+                                <a href="https://instagram.com/satulangkah_bersama" target="_blank">@satulangkah_bersama</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i> 
+                                <a href="https://goo.gl/maps/gX8YrTqo2JQesePCA" target="_blank">Sampangan, Semarang, Jawa Tengah</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i> 
+                                <a href="https://maps.app.goo.gl/26tRNjuGeuxKkyaf7" target="_blank">Bringin, Ngaliyan, Jawa Tengah</a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.34839167358!2d110.414474!3d-7.005543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMDAnMTkuOSJTIDExMMKwMjQnNTIuMSJF!5e0!3m2!1sid!2sid!4v1620000000000!5m2!1sid!2sid" 
+                            allowfullscreen="" 
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 SALMA Solutions - PT Satu Langkah Maju Bersama. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<style>
+    /* Footer Styles */
+    footer {
+        background-color: var(--primary);
+        color: white;
+        padding: 60px 0 30px;
+    }
+    
+    .footer-container {
+        margin-bottom: 40px;
+    }
+    
+    .footer-main {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 60px;
+        align-items: start;
+    }
+    
+    .footer-brand h3 {
+        color: white;
+        margin-bottom: 15px;
+        position: relative;
+        padding-bottom: 10px;
+        font-size: 1.5rem;
+    }
+    
+    .footer-brand h3:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        height: 2px;
+        background-color: var(--accent);
+    }
+    
+    .footer-brand p {
+        margin-bottom: 10px;
+        color: #ddd;
+        line-height: 1.5;
+    }
+    
+    .footer-contact-map {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: start;
+    }
+    
+    .contact-info h3 {
+        color: white;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 10px;
+        font-size: 1.3rem;
+    }
+    
+    .contact-info h3:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        height: 2px;
+        background-color: var(--accent);
+    }
+    
+    .footer-links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .footer-links li {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        transition: transform 0.2s ease;
+    }
+    
+    .footer-links li:hover {
+        transform: translateX(5px);
+    }
+    
+    .footer-links li i {
+        margin-right: 12px;
+        width: 20px;
+        color: var(--accent);
+        font-size: 1.1rem;
+    }
+    
+    .footer-links a {
+        color: #ddd;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-size: 0.95rem;
+    }
+    
+    .footer-links a:hover {
+        color: var(--accent);
+    }
+    
+    .social-links {
+        display: flex;
+        gap: 15px;
+        margin-top: 25px;
+    }
+    
+    .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        background-color: rgba(255,255,255,0.1);
+        border-radius: 50%;
+        color: white;
+        transition: all 0.3s;
+        text-decoration: none;
+    }
+    
+    .social-links a:hover {
+        background-color: var(--accent);
+        color: var(--dark);
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    
+    .map-container {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        height: 250px;
+    }
+    
+    .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+    
+    .copyright {
+        text-align: center;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        font-size: 0.9rem;
+        color: #ddd;
+    }
+    
+    /* Responsive Footer */
+    @media (max-width: 992px) {
+        .footer-main {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        
+        .footer-contact-map {
+            gap: 30px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .footer-contact-map {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        
+        .footer-brand,
+        .contact-info {
+            text-align: center;
+        }
+        
+        .footer-brand h3:after,
+        .contact-info h3:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .social-links {
+            justify-content: center;
+        }
+        
+        .footer-links li {
+            justify-content: center;
+        }
+        
+        .map-container {
+            height: 200px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        footer {
+            padding: 40px 0 20px;
+        }
+        
+        .footer-main {
+            gap: 30px;
+        }
+        
+        .footer-contact-map {
+            gap: 25px;
+        }
+        
+        .social-links {
+            gap: 10px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+        }
+    }
+</style>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+    <button class="close-lightbox" onclick="closeLightbox()">&times;</button>
+    <img id="lightbox-img" class="lightbox-img" src="" alt="">
+    <div id="lightbox-caption" class="lightbox-caption"></div>
+</div>
+
+<script>
+    // Mobile Menu Toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const nav = document.querySelector('nav');
+        
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                nav.classList.toggle('active');
+            });
+        }
+        
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+            });
+        });
+        
+        // Handle image loading errors
+        const images = document.querySelectorAll('img');
+        images.forEach(img => {
+            img.addEventListener('error', function() {
+                // Jika gambar gagal dimuat, tampilkan placeholder
+                if (this.src.includes('thumbnail_product')) {
+                    this.src = 'https://via.placeholder.com/600x400/1a3a5f/ffffff?text=Preview+Produk';
+                }
+            });
+        });
+    });
+
+    // Modal Functions
+    function openModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+    }
+    
+    function closeModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    }
+    
+    // Close modal when clicking outside
+    window.addEventListener('click', (event) => {
+        const modals = document.querySelectorAll('.modal');
+        modals.forEach(modal => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (modal.style.display === 'block') {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Juga tutup lightbox jika terbuka
+            const lightbox = document.getElementById('lightbox');
+            if (lightbox && lightbox.style.display === 'flex') {
+                closeLightbox();
+            }
+        }
+    });
+    
+    // Lightbox Functions
+    function openLightbox(src, caption = '') {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+        
+        if (lightbox && lightboxImg) {
+            lightboxImg.src = src;
+            lightboxCaption.textContent = caption;
+            lightbox.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+    }
+    
+    function closeLightbox() {
+        const lightbox = document.getElementById('lightbox');
+        if (lightbox) {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    }
+    
+    // Close lightbox when clicking outside image
+    document.getElementById('lightbox').addEventListener('click', (e) => {
+        if (e.target.id === 'lightbox') {
+            closeLightbox();
+        }
+    });
+</script>
+</body>
+</html>
+
