@@ -131,93 +131,12 @@
         }
         
         /* ============================================
-           TOP BAR STYLES (sama seperti di produk.html)
-        ============================================ */
-        /* Top Bar - Hanya untuk desktop */
-        .top-bar {
-            background: linear-gradient(90deg, #1a3a5f 0%, #2c5282 50%, #1a3a5f 100%);
-            color: white;
-            padding: 10px 0;
-            font-size: 0.9rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .top-bar::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                90deg,
-                transparent,
-                rgba(255, 255, 255, 0.3),
-                transparent
-            );
-            animation: spotlight 10s ease-in-out infinite;
-        }
-
-        @keyframes spotlight {
-            0% {
-                left: -100%;
-            }
-            15% {
-                left: 100%;
-            }
-            100% {
-                left: 100%;
-            }
-        }
-
-        .top-bar-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .business-hours {
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
-
-        .business-hours i {
-            margin-right: 8px;
-            color: var(--accent);
-        }
-
-        .contact-top {
-            display: flex;
-            align-items: center;
-        }
-
-        .contact-top i {
-            margin-right: 8px;
-            color: var(--accent);
-        }
-
-        .contact-top a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-            transition: color 0.3s;
-        }
-
-        .contact-top a:hover {
-            color: var(--accent);
-        }
-
-        /* ============================================
            HEADER & NAVIGATION
         ============================================ */
         header {
             background-color: white;
             box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-            position: sticky;
+            position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
@@ -229,6 +148,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0 30px;
             height: 100%;
             max-width: 1200px;
             margin: 0 auto;
@@ -249,12 +169,12 @@
         .logo-text {
             font-size: 1.5rem;
             font-weight: 700;
-            color: #066DB5;
+            color: var(--primary);
             letter-spacing: 0.5px;
         }
         
         .logo-text span {
-            color: #06A1F9;
+            color: var(--secondary);
         }
         
         /* Desktop Navigation */
@@ -303,12 +223,15 @@
         .nav-button {
             background-color: var(--accent);
             color: var(--dark);
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 12px 25px;
+            border-radius: 8px;
             font-weight: 600;
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 3px 10px rgba(248, 183, 57, 0.2);
         }
         
         .nav-button:hover {
@@ -368,10 +291,11 @@
             background-position: center;
             background-attachment: fixed;
             color: white;
+            padding: 180px 0 120px;
             text-align: center;
             position: relative;
             overflow: hidden;
-            margin-top: 0;
+            margin-top: 80px;
         }
         
         .hero:before {
@@ -580,64 +504,107 @@
         }
         
         /* ============================================
-           MILESTONE SECTION
+           PROSES KONSULTASI KAMI - Updated sesuai foto
         ============================================ */
-        .milestone-container {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
+        #proses-konsultasi {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+            padding: 80px 0;
         }
         
-        .milestone-container:before {
+        .proses-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .proses-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .proses-item {
+            background: white;
+            border-radius: 15px;
+            padding: 35px 25px 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .proses-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+        
+        .proses-item:before {
             content: '';
             position: absolute;
             top: 0;
-            bottom: 0;
-            left: 30px;
-            width: 4px;
-            background: linear-gradient(to bottom, var(--secondary), var(--accent));
-            border-radius: 2px;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--secondary), var(--accent));
         }
         
-        .milestone-item {
-            display: flex;
-            margin-bottom: 50px;
-            position: relative;
-        }
-        
-        .milestone-year {
-            width: 60px;
-            height: 60px;
-            background: var(--secondary);
+        .proses-number {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--secondary), #3a7a4e);
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 1.8rem;
             font-weight: 700;
-            font-size: 1.1rem;
-            margin-right: 40px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(74, 140, 94, 0.3);
             flex-shrink: 0;
-            box-shadow: 0 5px 15px rgba(74, 140, 94, 0.3);
-            z-index: 1;
         }
         
-        .milestone-content {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-            flex: 1;
-            transition: var(--transition);
-        }
-        
-        .milestone-content:hover {
-            transform: translateY(-5px);
-        }
-        
-        .milestone-content h3 {
-            margin-bottom: 15px;
+        .proses-item h4 {
             color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        
+        .proses-item p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 0;
+            flex-grow: 1;
+        }
+        
+        .proses-item .proses-icon {
+            font-size: 2.2rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            background: rgba(74, 140, 94, 0.1);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .proses-arrow {
+            display: none;
+        }
+        
+        /* Untuk membuat 2 baris: 3 item di atas, 3 item di bawah */
+        .proses-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
         }
         
         /* ============================================
@@ -776,13 +743,13 @@
         
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(5, 1fr);
             gap: 30px;
         }
         
         .service-card-minimal {
             background: white;
-            padding: 30px;
+            padding: 30px 25px;
             border-radius: 15px;
             box-shadow: var(--shadow);
             transition: var(--transition);
@@ -792,7 +759,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             height: 100%;
         }
         
@@ -812,11 +779,11 @@
         }
         
         .service-icon-minimal {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             color: var(--secondary);
             margin-bottom: 20px;
             display: inline-block;
-            padding: 20px;
+            padding: 18px;
             border-radius: 50%;
             background: rgba(74, 140, 94, 0.1);
             transition: var(--transition);
@@ -828,16 +795,21 @@
         }
         
         .service-card-minimal h3 {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             color: var(--primary);
-            font-size: 1.4rem;
+            font-size: 1.3rem;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .service-card-minimal p {
             color: var(--gray);
-            margin-bottom: 25px;
-            font-size: 0.95rem;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
             line-height: 1.5;
+            flex-grow: 1;
         }
         
         .btn-detail {
@@ -850,6 +822,8 @@
             transition: all 0.3s ease;
             cursor: pointer;
             font-size: 0.9rem;
+            width: 100%;
+            max-width: 180px;
         }
         
         .btn-detail:hover {
@@ -1535,7 +1509,7 @@
         ============================================ */
         @media (max-width: 1200px) {
             .services-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(3, 1fr);
             }
             
             .advantage-grid {
@@ -1558,16 +1532,6 @@
         }
         
         @media (max-width: 992px) {
-            /* Sembunyikan topbar di mobile (sama seperti di produk.html) */
-            .top-bar {
-                display: none !important;
-            }
-            
-            /* Sesuaikan padding hero section untuk mobile */
-            .hero {
-                padding: 140px 0 80px !important;
-            }
-            
             .mobile-menu-btn {
                 display: flex;
                 margin-right: 10px;
@@ -1660,6 +1624,11 @@
                 padding: 80px 0;
             }
             
+            .hero {
+                padding: 160px 0 80px;
+                margin-top: 80px;
+            }
+            
             .clients-track {
                 animation-duration: 35s;
             }
@@ -1683,28 +1652,13 @@
             .footer-contact-map {
                 gap: 30px;
             }
-        }
-        
-        @media (min-width: 993px) {
-            /* Tampilkan topbar di desktop */
-            .top-bar {
-                display: block !important;
+            
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
             
-            /* Atur ulang topbar untuk desktop */
-            .top-bar-container {
-                flex-direction: row;
-                text-align: left;
-                padding: 0 15px;
-            }
-            
-            .business-hours, .contact-top {
-                justify-content: flex-start;
-                width: auto;
-            }
-            
-            .contact-top {
-                flex-direction: row;
+            .proses-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
         
@@ -1713,8 +1667,23 @@
             h2 { font-size: 1.8rem; }
             h3 { font-size: 1.4rem; }
             
+            .hero {
+                padding: 140px 0 80px;
+                margin-top: 80px;
+            }
+            
             .services-grid {
                 grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .service-card-minimal {
+                padding: 25px 20px;
+            }
+            
+            .service-card-minimal h3 {
+                min-height: auto;
+                font-size: 1.2rem;
             }
             
             .service-card, .vision, .mission, .team-member {
@@ -1725,19 +1694,19 @@
                 padding: 60px 0;
             }
             
-            .milestone-container:before {
-                left: 25px;
+            .proses-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
             }
             
-            .milestone-year {
-                width: 50px;
-                height: 50px;
-                font-size: 1rem;
-                margin-right: 20px;
+            .proses-item {
+                padding: 25px 20px;
             }
             
-            .milestone-content {
-                padding: 20px;
+            .proses-number {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
             }
             
             .target-item {
@@ -1980,6 +1949,7 @@
             
             .hero {
                 padding: 120px 0 60px;
+                margin-top: 70px;
             }
             
             .hero h1 {
@@ -1995,23 +1965,6 @@
     </style>
 </head>
 <body>
-    <!-- Top Bar dengan Jam Operasional -->
-    <div class="top-bar">
-        <div class="container top-bar-container">
-            <div class="business-hours">
-                <i class="far fa-clock"></i>
-                <span>Jam Operasional: Senin - Sabtu: 09:00 - 18:00 | Minggu: Tutup</span>
-            </div>
-            <div class="contact-top">
-                <i class="fas fa-phone-alt"></i>
-                <span>+62 819-0176-3203</span>
-                <a href="mailto:satulangkahmajubersama@gmail.com">
-                    <i class="far fa-envelope"></i> satulangkahmajubersama@gmail.com
-                </a>
-            </div>
-        </div>
-    </div>
-    
     <!-- Header -->
     <header>
         <div class="header-container">
@@ -2029,7 +1982,7 @@
                     <li><a href="index.html">Beranda</a></li>
                     <li><a href="#about">Tentang Kami</a></li>
                     <li><a href="#services">Layanan</a></li>
-                    <li><a href="#team">Tim Kami</a></li>
+                    <li><a href="#clients">Klien & Kerjasama</a></li>
                     <li><a href="#kontak">Kontak</a></li>
                     <li><a href="produk.html" class="nav-button">Produk Digital</a></li>
                 </ul>
@@ -2101,166 +2054,139 @@
         </div>
     </div>
     
-    <!-- Milestone Section -->
-    <section id="milestone">
+    <!-- Proses Konsultasi Kami - Updated sesuai foto -->
+    <section id="proses-konsultasi">
         <div class="container">
-            <h2 class="section-title">Milestone</h2>
-            <div class="milestone-container">
-                <div class="milestone-item">
-                    <div class="milestone-year">2025</div>
-                    <div class="milestone-content">
-                        <h3>Pendirian Perusahaan</h3>
-                        <p>Didirikan sebagai unit usaha konsultasi dan penyedia tenaga kerja. dan Resmi berbadan hukum sebagai PT Satu Langkah Maju Bersama dengan brand SALMA Solutions.</p>
-                    </div>
-                </div>
-                <div class="milestone-item">
-                    <div class="milestone-year">2025</div>
-                    <div class="milestone-content">
-                        <h3>Ekspansi Layanan</h3>
-                        <p>Memperluas layanan ke sektor manufaktur, retail, dan UMKM digital.</p>
-                    </div>
-                </div>
-                <div class="milestone-item">
-                    <div class="milestone-year">2026</div>
-                    <div class="milestone-content">
-                        <h3>Ekspansi Geografis</h3>
-                        <p>Menjadi penyedia layanan konsultasi dan SDM terpercaya di 10 kota besar di Indonesia.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Market Analysis Section -->
-    <section id="market-analysis" class="vision-mission">
-        <div class="container">
-            <h2 class="section-title">Market Analysis</h2>
-            <div class="market-analysis-content">
-                <div class="market-trends">
-                    <h3>Trend Kebutuhan Bisnis</h3>
-                    <p>Banyak perusahaan menghadapi tantangan efisiensi operasional dan kekurangan SDM yang kompeten. SALMA hadir menjawab kebutuhan tersebut dengan pendekatan solutif.</p>
-                </div>
-                
-                <div class="target-market">
-                    <h3>Target Market</h3>
-                    <div class="target-list">
-                        <div class="target-item">
-                            <i class="fas fa-building"></i>
-                            <div>
-                                <h4>Perusahaan Skala Kecil hingga Menengah (UMKM)</h4>
-                                <p>Yang ingin scale-up bisnis mereka.</p>
-                            </div>
+            <h2 class="section-title">Proses Konsultasi Kami</h2>
+            <div class="proses-container">
+                <div class="proses-grid">
+                    <!-- Item 1: Identifikasi Kebutuhan -->
+                    <div class="proses-item">
+                        <div class="proses-icon">
+                            <i class="fas fa-search"></i>
                         </div>
-                        <div class="target-item">
+                        <div class="proses-number">1</div>
+                        <h4>Identifikasi Kebutuhan</h4>
+                        <p>Kami memahami tantangan dan tujuan bisnis Anda.</p>
+                    </div>
+                    
+                    <!-- Item 2: Analisis & Diagnosa -->
+                    <div class="proses-item">
+                        <div class="proses-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <div class="proses-number">2</div>
+                        <h4>Analisis & Diagnosa</h4>
+                        <p>Menganalisis kondisi bisnis secara mendalam berbasis data & fakta.</p>
+                    </div>
+                    
+                    <!-- Item 3: Perumusan Strategi -->
+                    <div class="proses-item">
+                        <div class="proses-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="proses-number">3</div>
+                        <h4>Perumusan Strategi</h4>
+                        <p>Menyusun strategi & solusi yang tepat sesuai kebutuhan bisnis Anda.</p>
+                    </div>
+                    
+                    <!-- Item 4: Implementasi -->
+                    <div class="proses-item">
+                        <div class="proses-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="proses-number">4</div>
+                        <h4>Implementasi</h4>
+                        <p>Mendampingi implementasi strategi secara terstruktur dan terukur.</p>
+                    </div>
+                    
+                    <!-- Item 5: Monitoring & Evaluasi -->
+                    <div class="proses-item">
+                        <div class="proses-icon">
                             <i class="fas fa-chart-line"></i>
-                            <div>
-                                <h4>Perusahaan Korporasi</h4>
-                                <p>Yang ingin efisiensi & transformasi manajemen.</p>
-                            </div>
                         </div>
-                        <div class="target-item">
-                            <i class="fas fa-rocket"></i>
-                            <div>
-                                <h4>Startup dan Bisnis Digital</h4>
-                                <p>Yang membutuhkan SDM siap kerja.</p>
-                            </div>
-                        </div>
+                        <div class="proses-number">5</div>
+                        <h4>Monitoring & Evaluasi</h4>
+                        <p>Memantau hasil dan melakukan evaluasi untuk memastikan target tercapai.</p>
                     </div>
-                </div>
-                
-                <div class="competitive-advantage">
-                    <h3>Keunggulan Kompetitif SALMA Solutions</h3>
-                    <div class="advantage-grid">
-                        <!-- Keunggulan 1 -->
-                        <div class="advantage-item">
-                            <div class="advantage-icon">
-                                <i class="fas fa-sliders-h"></i>
-                            </div>
-                            <h4>Layanan Fleksibel & Terukur</h4>
-                            <p>Kami menyesuaikan solusi sesuai kebutuhan spesifik klien dengan pendekatan yang personal dan hasil yang terukur.</p>
+                    
+                    <!-- Item 6: Optimasi & Growth -->
+                    <div class="proses-item">
+                        <div class="proses-icon">
+                            <i class="fas fa-rocket"></i>
                         </div>
-                        
-                        <!-- Keunggulan 2 -->
-                        <div class="advantage-item">
-                            <div class="advantage-icon">
-                                <i class="fas fa-user-tie"></i>
-                            </div>
-                            <h4>Tim Ahli Berpengalaman</h4>
-                            <p>Tim profesional dengan pengalaman 15+ tahun di berbagai industri, siap memberikan solusi terbaik untuk bisnis Anda.</p>
-                        </div>
-                        
-                        <!-- Keunggulan 3 -->
-                        <div class="advantage-item">
-                            <div class="advantage-icon">
-                                <i class="fas fa-chart-pie"></i>
-                            </div>
-                            <h4>Pendekatan Berbasis Hasil</h4>
-                            <p>Fokus pada pencapaian hasil yang terukur dan berdampak langsung pada pertumbuhan dan efisiensi bisnis Anda.</p>
-                        </div>
-                        
-                        <!-- Keunggulan 4 -->
-                        <div class="advantage-item">
-                            <div class="advantage-icon">
-                                <i class="fas fa-sync-alt"></i>
-                            </div>
-                            <h4>Dukungan End-to-End</h4>
-                            <p>Mulai dari konsultasi, perencanaan, hingga eksekusi lapangan dengan pendampingan yang komprehensif.</p>
-                        </div>
+                        <div class="proses-number">6</div>
+                        <h4>Optimasi & Growth</h4>
+                        <p>Melakukan perbaikan berkelanjutan untuk pertumbuhan maksimal.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Services -->
+   
+    
+    <!-- Services Section - Updated sesuai foto -->
     <section id="services">
         <div class="container">
             <h2 class="section-title">Layanan Kami</h2>
             <div class="services-grid">
-                <!-- Layanan 1: Konsultasi Bisnis & Manajemen -->
+                <!-- Layanan 1: Konsultan Bisnis & Manajemen -->
                 <div class="service-card-minimal">
                     <div class="service-icon-minimal">
-                        <i class="fas fa-brain"></i>
+                        <i class="fas fa-briefcase"></i>
                     </div>
-                    <h3>Konsultasi Bisnis & Manajemen</h3>
-                    <p>Menyusun strategi bisnis, sistem kerja, dan SOP yang efektif untuk efisiensi dan pertumbuhan bisnis jangka panjang.</p>
+                    <h3>Konsultan Bisnis & Manajemen</h3>
+                    <p>Solusi strategis untuk membantu bisnis Anda lebih terarah, efisien & berkembang.</p>
                     <button class="btn-detail" onclick="openServiceModal('consulting')">
                         Lihat Detail <i class="fas fa-arrow-right"></i>
                     </button>
                 </div>
                 
-                <!-- Layanan 2: Penyediaan Jasa Tenaga Kerja -->
+                <!-- Layanan 2: Konsultan HR (SDM) -->
+                <div class="service-card-minimal">
+                    <div class="service-icon-minimal">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Konsultan HR (SDM)</h3>
+                    <p>Kelola SDM perusahaan Anda secara profesional, sistematis & sesuai regulasi.</p>
+                    <button class="btn-detail" onclick="openServiceModal('hr')">
+                        Lihat Detail <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                
+                <!-- Layanan 3: Legalitas Corporate -->
+                <div class="service-card-minimal">
+                    <div class="service-icon-minimal">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h3>Legalitas Corporate</h3>
+                    <p>Urus legalitas perusahaan Anda dengan mudah, cepat & aman.</p>
+                    <button class="btn-detail" onclick="openServiceModal('legalitas')">
+                        Lihat Detail <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                
+                <!-- Layanan 4: Penyedia Tenaga Kerja / Head Hunter -->
                 <div class="service-card-minimal">
                     <div class="service-icon-minimal">
                         <i class="fas fa-users"></i>
                     </div>
-                    <h3>Penyediaan Jasa Tenaga Kerja</h3>
-                    <p>Menyediakan kandidat profesional yang sesuai dengan kebutuhan perusahaan, mulai dari level staff hingga eksekutif.</p>
-                    <button class="btn-detail" onclick="openServiceModal('staffing')">
+                    <h3>Penyedia Tenaga Kerja / Head Hunter</h3>
+                    <p>Kami membantu Anda menemukan talenta terbaik yang tepat, cepat & profesional.</p>
+                    <button class="btn-detail" onclick="openServiceModal('headhunter')">
                         Lihat Detail <i class="fas fa-arrow-right"></i>
                     </button>
                 </div>
                 
-                <!-- Layanan 3: Audit & Pengembangan HR -->
+                <!-- Layanan 5: Pendaftaran Perusahaan -->
                 <div class="service-card-minimal">
                     <div class="service-icon-minimal">
-                        <i class="fas fa-chart-line"></i>
+                        <i class="fas fa-building"></i>
                     </div>
-                    <h3>Audit & Pengembangan HR</h3>
-                    <p>Menganalisis sistem HR Anda, mengevaluasi kinerja SDM, dan memberi rekomendasi perbaikan.</p>
-                    <button class="btn-detail" onclick="openServiceModal('hr-audit')">
-                        Lihat Detail <i class="fas fa-arrow-right"></i>
-                    </button>
-                </div>
-                
-                <!-- Layanan 4: Program HR Retainer -->
-                <div class="service-card-minimal">
-                    <div class="service-icon-minimal">
-                        <i class="fas fa-user-cog"></i>
-                    </div>
-                    <h3>Program HR Retainer</h3>
-                    <p>Layanan HR Menyeluruh & Berkelanjutan untuk Perusahaan Berkembang</p>
-                    <button class="btn-detail" onclick="openServiceModal('hr-retainer')">
+                    <h3>Pendaftaran Perusahaan</h3>
+                    <p>Mulai bisnis Anda dengan legalitas yang tepat, cepat & sesuai peraturan.</p>
+                    <button class="btn-detail" onclick="openServiceModal('pendaftaran')">
                         Lihat Detail <i class="fas fa-arrow-right"></i>
                     </button>
                 </div>
@@ -2274,34 +2200,7 @@
             <!-- Konten modal akan diisi oleh JavaScript -->
         </div>
     </div>
-    
-    <!-- Team -->
-    <section id="team">
-        <div class="container">
-            <h2 class="section-title">Tim Kami</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 50px;">Tim Profesional dengan Pengalaman Lebih dari 10 Tahun. Di balik setiap layanan SALMA Solutions, terdapat tim ahli yang telah berpengalaman lebih dari 10 tahun dalam dunia bisnis, manajemen, dan pengelolaan sumber daya manusia.</p>
-            
-            <div class="team-grid">
-                <div class="team-member">
-                    <img src="foto/riyan.jpg" alt="Fitrian Adi Utama" class="member-photo">
-                    <h3>Fitrian Adi Utama</h3>
-                    <p>Direktur Utama</p>
-                    <div class="member-social">
-                        <a href="https://www.instagram.com/f_aditama15?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                
-                <div class="team-member">
-                    <img src="foto/aulia.jpg" alt="Aulia Rizki Ramadani" class="member-photo">
-                    <h3>Aulia Rizki Ramadani</h3>
-                    <p>Manager Pemasaran</p>
-                    <div class="member-social">
-                        <a href="https://www.instagram.com/auliarizkira?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
     
     <!-- Clients & Partnership Section -->
     <section id="clients">
@@ -2455,7 +2354,7 @@
                                     <i class="fas fa-map-marker-alt"></i> 
                                     <a href="https://maps.app.goo.gl/26tRNjuGeuxKkyaf7" target="_blank">Bringin, Ngaliyan, Jawa Tengah</a>
                                 </li>
-                                <li><span>Jam Operasional: <br>Senin - Sabtu: 09:00 - 18:00 | Minggu: Tutup</span></li>
+                                <li><span>Jam Operasional: <br>Senin - Jumat: 08:00 - 17:00</span></li>
                             </ul>
                         </div>
                         
@@ -2604,7 +2503,7 @@
             }, observerOptions);
             
             // Observe elements for animation
-            const animateElements = document.querySelectorAll('.service-card-minimal, .team-member, .vision, .mission, .advantage-item, .milestone-content');
+            const animateElements = document.querySelectorAll('.service-card-minimal, .team-member, .vision, .mission, .advantage-item, .proses-item');
             
             animateElements.forEach(el => {
                 el.style.opacity = '0';
@@ -2764,68 +2663,108 @@
         // ============================================
         // SERVICE MODAL FUNCTIONALITY
         // ============================================
-        // Data detail layanan
+        // Data detail layanan berdasarkan foto
         const serviceDetails = {
             'consulting': {
-                title: 'Konsultasi Bisnis & Manajemen',
-                icon: 'fas fa-brain',
-                description: 'Menyusun strategi bisnis, sistem kerja, dan SOP yang efektif untuk efisiensi dan pertumbuhan bisnis.',
+                title: 'Konsultan Bisnis & Manajemen',
+                icon: 'fas fa-briefcase',
+                description: 'Solusi strategis untuk membantu bisnis Anda lebih terarah, efisien & berkembang.',
+                focus: 'Memberikan solusi konsultasi yang praktis, terukur & berorientasi hasil untuk membantu perusahaan menghadapi tantangan bisnis, meningkatkan kinerja, dan mencapai pertumbuhan berkelanjutan.',
                 features: [
-                    'Business Model & Strategy Development',
-                    'Manajemen Operasional & SDM',
-                    'Transformasi Digital Bisnis',
-                    'SOP & Sistem Manajemen',
-                    'Pendampingan Bisnis UMKM hingga Korporat'
-                ]
-            },
-            'staffing': {
-                title: 'Penyediaan Jasa Tenaga Kerja',
-                icon: 'fas fa-users',
-                description: 'Menyediakan kandidat profesional yang sesuai kebutuhan perusahaan, dari staff hingga eksekutif.',
-                features: [
-                    'Rekrutmen & Seleksi (Staff-Managerial)',
-                    'Penyedia Tenaga Kerja Harian/Kontrak',
-                    'Outsourcing SDM (non-core function)',
-                    'HR Project & Talent Placement',
-                    'Executive Search untuk Level Direksi'
-                ]
-            },
-            'hr-audit': {
-                title: 'Audit & Pengembangan HR',
-                icon: 'fas fa-chart-line',
-                description: 'Menganalisis sistem HR, evaluasi kinerja SDM, dan rekomendasi perbaikan.',
-                features: [
-                    'Analisis Sistem HR yang komprehensif',
-                    'Evaluasi Kinerja SDM metode terbaru',
-                    'Rekomendasi Perbaikan berbasis data',
-                    'Pengembangan Organisasi',
-                    'Competency Based Assessment'
-                ]
-            },
-            'hr-retainer': {
-                title: 'Program HR Retainer',
-                icon: 'fas fa-user-cog',
-                description: 'Layanan HR Menyeluruh & Berkelanjutan untuk Perusahaan Berkembang',
-                features: [
-                    {title: 'Rekrutmen & Seleksi', desc: 'Sistem berbasis kompetensi'},
-                    {title: 'Penggajian & Administrasi', desc: 'Akurat dan tepat waktu'},
-                    {title: 'Kontrak & Perjanjian Kerja', desc: 'Sesuai regulasi terbaru'},
-                    {title: 'SOP HR', desc: 'Dokumentasi sistematis'},
-                    {title: 'Training & Development', desc: 'Peningkatan kompetensi'},
-                    {title: 'Hubungan Industrial', desc: 'Pendampingan profesional'}
+                    'Perencanaan Bisnis - Membantu menyusun rencana bisnis yang realistis, terukur & siap dieksekusi.',
+                    'Pengembangan Strategi - Merumuskan strategi bisnis yang kompetitif untuk mencapai keunggulan di pasar.',
+                    'Analisis & Efisiensi Operasional - Menganalisis proses bisnis dan meningkatkan efisiensi untuk mengoptimalkan kinerja.',
+                    'Pendampingan UMKM hingga Korporasi - Pendampingan bisnis sesuai kebutuhan perusahaan dari skala kecil hingga besar.'
                 ],
                 benefits: [
-                    'Tim Konsultan Berpengalaman di Berbagai Industri',
-                    'Pendekatan Personal & Solusi yang Disesuaikan',
-                    'Sistem Rekrutmen & Pelatihan Berbasis Kompetensi',
-                    'Laporan & Monitoring Berkala',
-                    'Garansi Kepuasan Layanan',
-                    'Efisiensi Biaya hingga 40% dibanding HR internal'
+                    'Strategi bisnis lebih tepat sasaran',
+                    'Operasional lebih efisien & produktif',
+                    'Pengambilan keputusan lebih akurat',
+                    'Daya saing meningkat',
+                    'Pertumbuhan bisnis berkelanjutan',
+                    'Meningkatkan profit & nilai perusahaan'
+                ]
+            },
+            'hr': {
+                title: 'Konsultan HR (SDM)',
+                icon: 'fas fa-user-tie',
+                description: 'Kelola SDM perusahaan Anda secara profesional, sistematis & sesuai regulasi.',
+                focus: 'Memberikan solusi manajemen SDM yang terintegrasi untuk meningkatkan kinerja, produktivitas, dan keterlibatan karyawan sesuai strategi perusahaan.',
+                features: [
+                    'Penyusunan Struktur Organisasi - Merancang struktur organisasi yang efektif dan mendukung pencapaian tujuan perusahaan.',
+                    'KPI & Sistem Penilaian Kinerja - Menyusun KPI yang terukur dan sistem penilaian kinerja yang adil, objektif & memotivasi.',
+                    'Compensation & Benefit - Merancang sistem kompensasi & benefit yang kompetitif untuk menarik, mempertahankan & memotivasi talenta.',
+                    'HR Policy & SOP - Menyusun kebijakan & SOP HR yang jelas, konsisten dan sesuai regulasi.',
+                    'Pelatihan & Pengembangan SDM - Program pengembangan kompetensi untuk meningkatkan kapabilitas dan kesiapan karyawan.'
                 ],
-                specialNotes: [
-                    'Fleksibilitas akses layanan: harian, bulanan, atau tahunan',
-                    'Laporan kinerja HR dan rekomendasi perbaikan berkala',
-                    'Cocok untuk perusahaan yang ingin fokus pada bisnis inti'
+                benefits: [
+                    'SDM lebih produktif & loyal',
+                    'Sistem HR tertata & terukur',
+                    'Mengurangi risiko ketenagakerjaan',
+                    'Mendukung pengambilan keputusan berbasis data',
+                    'Budaya kerja positif & kolaboratif',
+                    'Meningkatkan retensi & kepuasan karyawan',
+                    'Mendukung pertumbuhan bisnis berkelanjutan'
+                ]
+            },
+            'legalitas': {
+                title: 'Legalitas Corporate',
+                icon: 'fas fa-gavel',
+                description: 'Urus legalitas perusahaan Anda dengan mudah, cepat & aman.',
+                focus: 'LEGAL - Aman & Sesuai Regulasi | CEPAT - Proses Efisien & Tepat Waktu | PRAKTIS - Mudah, Transparan & Profesional',
+                features: [
+                    'AKTA Perusahaan - Pembuatan akta pendirian, perubahan, pernyataan keputusan & lainnya.',
+                    'NIB - Perizinan Berusaha (NIB, KBLI, OSS) - Pengurusan NIB, penentuan KBLI yang tepat dan pendaftaran melalui OSS.',
+                    'Perubahan Anggaran Dasar - Perubahan AD sesuai kebutuhan perusahaan Anda.',
+                    'Perpanjangan Izin - Perpanjangan berbagai izin usaha agar bisnis Anda tetap berjalan lancar.',
+                    'Laporan Kepatuhan Perusahaan - Pembuatan laporan & dokumen kepatuhan sesuai regulasi yang berlaku.'
+                ],
+                benefits: [
+                    'Kerahasiaan klien terjamin & komitmen pada kualitas',
+                    'Proses cepat, efektif dan selesai tepat waktu',
+                    'Solusi tepat sesuai kebutuhan bisnis Anda',
+                    'Dokumen legalitas resmi selesai dan siap digunakan',
+                    'Tim profesional dengan pengalaman di berbagai jenis industri',
+                    'Pendampingan kebutuhan legalitas selanjutnya'
+                ]
+            },
+            'headhunter': {
+                title: 'Penyedia Tenaga Kerja / Head Hunter',
+                icon: 'fas fa-users',
+                description: 'Kami membantu Anda menemukan talenta terbaik yang tepat, cepat & profesional.',
+                focus: 'Kami menyediakan solusi rekrutmen menyeluruh untuk berbagai posisi level staf hingga eksekutif di berbagai industri. Dengan jaringan luas, metode seleksi yang tepat, dan tim berpengalaman, kami memastikan Anda mendapatkan kandidat terbaik sesuai kebutuhan perusahaan.',
+                features: [
+                    'Headhunter Eksklusif, Manajerial & Profesional - Mencari kandidat terbaik untuk posisi strategis dan kepemimpinan.',
+                    'Rekrutmen Massal - Solusi cepat untuk kebutuhan tenaga kerja dalam jumlah besar.',
+                    'Seleksi Ketat & Terstruktur - Proses seleksi berlapis untuk memastikan kandidat kompeten & sesuai budaya.',
+                    'Garansi Penggantian (Replacement Guarantee) - Kami memberikan garansi penggantian kandidat jika diperlukan sesuai ketentuan.'
+                ],
+                benefits: [
+                    'Hemat waktu & biaya rekrutmen',
+                    'Mendapatkan kandidat berkualitas',
+                    'Proses seleksi profesional',
+                    'Cocok untuk posisi strategis hingga level manajerial',
+                    'Mengurangi risiko turnover',
+                    'Mendukung pertumbuhan bisnis Anda'
+                ]
+            },
+            'pendaftaran': {
+                title: 'Pendaftaran Perusahaan',
+                icon: 'fas fa-building',
+                description: 'Mulai bisnis Anda dengan legalitas yang tepat, cepat & sesuai peraturan.',
+                focus: 'MUDAH - Proses Simple | CEPAT - Efisien & | AMAN - Sesuai Regulasi & Terpercaya',
+                features: [
+                    'Pendirian PT (PMA/PMDN) - Pendirian Perseroan Terbatas untuk Penanaman Modal Asing maupun Dalam Negeri.',
+                    'CV, Firma, Yayasan - Pendirian badan usaha sesuai kebutuhan bisnis Anda.',
+                    'Perizinan Lengkap - Pengurusan izin usaha, NIB, KBLI, OSS, hingga izin operasional lainnya.',
+                    'Pendampingan hingga Perusahaan Aktif Beroperasi - Kami dampingi sampai bisnis Anda berjalan lancar dan patuh regulasi.'
+                ],
+                benefits: [
+                    'Proses aman, transparan dan sesuai regulasi yang berlaku',
+                    'Proses terstruktur untuk hasil cepat dan tepat waktu',
+                    'Solusi menyeluruh sesuai kebutuhan bisnis Anda',
+                    'Tim profesional berpengalaman dalam pendirian berbagai jenis perusahaan',
+                    'Pendampingan hingga perusahaan aktif beroperasi dan patuh regulasi'
                 ]
             }
         };
@@ -2836,110 +2775,52 @@
             const modalContent = modal.querySelector('.modal-content');
             const service = serviceDetails[serviceId];
             
-            if (serviceId === 'hr-retainer') {
-                modalContent.innerHTML = `
-                    <div class="modal-header">
-                        <h3><i class="${service.icon}"></i> ${service.title}</h3>
-                        <button class="close-modal" onclick="closeModal()">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="service-detail-content">
-                            <div class="service-detail-header">
-                                <div class="service-detail-icon">
-                                    <i class="${service.icon}"></i>
-                                </div>
-                                <h2>${service.title}</h2>
-                                <p>${service.description}</p>
-                                <p><strong>Solusi komprehensif tanpa perlu membangun tim HR internal yang mahal</strong></p>
+            if (!service) return;
+            
+            modalContent.innerHTML = `
+                <div class="modal-header">
+                    <h3><i class="${service.icon}"></i> ${service.title}</h3>
+                    <button class="close-modal" onclick="closeModal()">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="service-detail-content">
+                        <div class="service-detail-header">
+                            <div class="service-detail-icon">
+                                <i class="${service.icon}"></i>
                             </div>
-                            
-                            <div class="service-section">
-                                <h4><i class="fas fa-check-circle"></i> Layanan Utama</h4>
-                                <div class="compact-features">
-                                    ${service.features.map(item => `
-                                        <div class="compact-feature">
-                                            <strong>${item.title}</strong>
-                                            <span>${item.desc}</span>
-                                        </div>
-                                    `).join('')}
-                                </div>
-                            </div>
-                            
-                            <div class="service-section">
-                                <h4><i class="fas fa-star"></i> Kenapa Memilih Kami?</h4>
-                                <ul>
-                                    ${service.benefits.map(benefit => `<li>${benefit}</li>`).join('')}
-                                </ul>
-                            </div>
-                            
-                            <div class="service-section">
-                                <h4><i class="fas fa-info-circle"></i> Informasi Tambahan</h4>
-                                <ul>
-                                    ${service.specialNotes.map(note => `<li>${note}</li>`).join('')}
-                                </ul>
-                            </div>
-                            
-                            <div class="service-cta">
-                                <a href="https://wa.me/6281901763203?text=Halo SALMA Solutions, saya tertarik dengan Program HR Retainer" 
-                                   class="btn" 
-                                   target="_blank">
-                                    <i class="fab fa-whatsapp"></i> Konsultasi Gratis
-                                </a>
-                                <button class="btn btn-outline" onclick="closeModal()">
-                                    Tutup
-                                </button>
-                            </div>
+                            <h2>${service.title}</h2>
+                            <p>${service.description}</p>
+                            ${service.focus ? `<p style="font-weight:500; color:var(--primary); margin-top:10px;">${service.focus}</p>` : ''}
+                        </div>
+                        
+                        <div class="service-section">
+                            <h4><i class="fas fa-check-circle"></i> Layanan Kami</h4>
+                            <ul>
+                                ${service.features.map(feature => `<li>${feature}</li>`).join('')}
+                            </ul>
+                        </div>
+                        
+                        ${service.benefits ? `
+                        <div class="service-section">
+                            <h4><i class="fas fa-star"></i> Manfaat</h4>
+                            <ul>
+                                ${service.benefits.map(benefit => `<li>${benefit}</li>`).join('')}
+                            </ul>
+                        </div>` : ''}
+                        
+                        <div class="service-cta">
+                            <a href="https://wa.me/6281901763203?text=Halo SALMA Solutions, saya tertarik dengan ${encodeURIComponent(service.title)}" 
+                               class="btn" 
+                               target="_blank">
+                                <i class="fab fa-whatsapp"></i> Konsultasi Gratis
+                            </a>
+                            <button class="btn btn-outline" onclick="closeModal()">
+                                Tutup
+                            </button>
                         </div>
                     </div>
-                `;
-            } else {
-                modalContent.innerHTML = `
-                    <div class="modal-header">
-                        <h3><i class="${service.icon}"></i> ${service.title}</h3>
-                        <button class="close-modal" onclick="closeModal()">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="service-detail-content">
-                            <div class="service-detail-header">
-                                <div class="service-detail-icon">
-                                    <i class="${service.icon}"></i>
-                                </div>
-                                <h2>${service.title}</h2>
-                                <p>${service.description}</p>
-                            </div>
-                            
-                            <div class="service-section">
-                                <h4><i class="fas fa-check-circle"></i> Cakupan Layanan</h4>
-                                <ul>
-                                    ${service.features.map(feature => `<li>${feature}</li>`).join('')}
-                                </ul>
-                            </div>
-                            
-                            <div class="service-section">
-                                <h4><i class="fas fa-lightbulb"></i> Manfaat</h4>
-                                <ul>
-                                    <li>Solusi yang disesuaikan dengan kebutuhan bisnis</li>
-                                    <li>Pendekatan praktis dan hasil yang terukur</li>
-                                    <li>Tim konsultan berpengalaman</li>
-                                    <li>Efisiensi waktu dan biaya</li>
-                                    <li>Dukungan berkelanjutan</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="service-cta">
-                                <a href="https://wa.me/6281901763203?text=Halo SALMA Solutions, saya tertarik dengan ${encodeURIComponent(service.title)}" 
-                                   class="btn" 
-                                   target="_blank">
-                                    <i class="fab fa-whatsapp"></i> Konsultasi Gratis
-                                </a>
-                                <button class="btn btn-outline" onclick="closeModal()">
-                                    Tutup
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                `;
-            }
+                </div>
+            `;
             
             // Tampilkan modal
             modal.style.display = 'flex';
