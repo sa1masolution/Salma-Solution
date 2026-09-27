@@ -1962,6 +1962,42 @@
                 margin-bottom: 30px;
             }
         }
+
+        /* Logo klien berbasis teks (untuk klien tanpa file logo) */
+.client-logo-text {
+    padding: 15px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+    border: 1px dashed rgba(26, 58, 95, 0.2);
+}
+
+.client-name-text {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-align: center;
+    line-height: 1.3;
+    letter-spacing: 0.3px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.client-logo-text:hover .client-name-text {
+    color: var(--secondary);
+    transform: scale(1.05);
+}
+
+/* Responsive: perkecil teks di layar kecil */
+@media (max-width: 768px) {
+    .client-name-text {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .client-name-text {
+        font-size: 0.75rem;
+    }
+}
     </style>
 </head>
 <body>
@@ -2011,11 +2047,11 @@
             <h2 class="section-title">Tentang Perusahaan</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>SALMA Solutions</h3>
-                    <p>SALMA Solutions adalah perusahaan modern yang bergerak di bidang konsultasi bisnis & manajemen serta penyedia jasa tenaga kerja. Kami hadir sebagai solusi terintegrasi bagi pelaku bisnis yang ingin berkembang secara berkelanjutan, efisien, dan kompetitif.</p>
-                    <p>Dengan pendekatan profesional dan berbasis hasil, SALMA Solutions memberikan layanan strategis bagi perusahaan dalam mengelola sumber daya, menyusun sistem manajemen, hingga pemenuhan kebutuhan tenaga kerja yang tepat guna.</p>
-                    <p>Kami percaya, kesuksesan setiap klien dimulai dari satu langkah kecil yang dijalankan bersama dengan mitra yang tepat.</p>
-                </div>
+    <h3>SALMA Solutions</h3>
+    <p>SALMA Solutions adalah perusahaan modern yang bergerak di bidang konsultasi bisnis & manajemen, penyedia jasa tenaga kerja / Head Hunter, serta Pendaftaran Perusahaan dan Legalitas Corporate. Kami hadir sebagai solusi terintegrasi bagi pelaku bisnis yang ingin berkembang secara berkelanjutan, efisien, dan kompetitif.</p>
+    <p>Dengan pendekatan profesional dan berbasis hasil, SALMA Solutions memberikan layanan strategis bagi perusahaan dalam mengelola sumber daya, menyusun sistem manajemen, hingga pemenuhan kebutuhan tenaga kerja yang tepat guna.</p>
+    <p>Kami percaya, kesuksesan setiap klien dimulai dari satu langkah kecil yang dijalankan bersama dengan mitra yang tepat.</p>
+</div>
                 <div class="about-image">
                     <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="SALMA Solutions Team">
                 </div>
@@ -2259,6 +2295,46 @@
                                 <div class="client-tooltip">Wadah Kertas Nusantara</div>
                             </div>
                             <!-- Duplikat untuk animasi seamless -->
+                            
+                            <!-- ================= KLIEN BARU ================= -->
+<div class="client-logo">
+    <img src="foto/pt_fqb_industri_indonesia.png" alt="PT FQB Industri Indonesia" loading="lazy">
+    <div class="client-tooltip">PT FQB Industri Indonesia</div>
+</div>
+<div class="client-logo">
+    <img src="foto/pt_biju_trading_indonesia.png" alt="PT Biju Trading Indonesia" loading="lazy">
+    <div class="client-tooltip">PT Biju Trading Indonesia</div>
+</div>
+<div class="client-logo">
+    <img src="foto/pt_jinxiu_konstruksi_cahaya.png" alt="PT Jinxiu Konstruksi Cahaya Indonesia" loading="lazy">
+    <div class="client-tooltip">PT Jinxiu Konstruksi Cahaya Indonesia</div>
+</div>
+<div class="client-logo">
+    <img src="foto/pt_sanbao_elektro_mekanikal.png" alt="PT SanBao Elektro Mekanikal" loading="lazy">
+    <div class="client-tooltip">PT SanBao Elektro Mekanikal</div>
+</div>
+<div class="client-logo">
+    <img src="foto/pt_long_sheng_sinar_utama.png" alt="PT Long Sheng Sinar Utama" loading="lazy">
+    <div class="client-tooltip">PT Long Sheng Sinar Utama</div>
+</div>
+<div class="client-logo">
+    <img src="foto/pt_cahaya_beton_indonesia.png" alt="PT Cahaya Beton Indonesia" loading="lazy">
+    <div class="client-tooltip">PT Cahaya Beton Indonesia</div>
+</div>
+<div class="client-logo">
+    <img src="foto/pt_fit_tech_jaya.png" alt="PT Fit Tech Jaya" loading="lazy">
+    <div class="client-tooltip">PT Fit Tech Jaya</div>
+</div>
+<div class="client-logo client-logo-text">
+<span class="client-name-text">PT Bao Sheng Tekno Mekanik</span>
+    <div class="client-tooltip">PT Bao Sheng Tekno Mekanik</div>
+</div>
+<div class="client-logo client-logo-text">
+    <span class="client-name-text">PT Bojun Lai Indonesia</span>
+    <div class="client-tooltip">PT Bojun Lai Indonesia</div>
+</div>
+<!-- ============================================= -->
+                            
                             <div class="client-logo">
                                 <img src="foto/adivasa-removebg-preview.png" alt="Adivasa" loading="lazy">
                                 <div class="client-tooltip">Adivasa</div>
@@ -2279,6 +2355,43 @@
                                 <img src="foto/nuclear-removebg-preview.png" alt="Nuclear" loading="lazy">
                                 <div class="client-tooltip">Nuclear</div>
                             </div>
+                            <!-- Duplikat klien baru untuk animasi seamless -->
+<div class="client-logo">
+    <img src="foto/pt_fqb_industri_indonesia.png" alt="PT FQB Industri Indonesia" loading="lazy">
+    <div class="client-tooltip">PT FQB Industri Indonesia</div>
+</div>
+<div class="client-logo">
+    <img src="foto/pt_biju_trading_indonesia.png" alt="PT Biju Trading Indonesia" loading="lazy">
+    <div class="client-tooltip">PT Biju Trading Indonesia</div>
+</div>
+<div class="client-logo">
+    <img src="foto/pt_jinxiu_konstruksi_cahaya.png" alt="PT Jinxiu Konstruksi Cahaya Indonesia" loading="lazy">
+    <div class="client-tooltip">PT Jinxiu Konstruksi Cahaya Indonesia</div>
+</div>
+<div class="client-logo">
+    <img src="foto/pt_sanbao_elektro_mekanikal.png" alt="PT SanBao Elektro Mekanikal" loading="lazy">
+    <div class="client-tooltip">PT SanBao Elektro Mekanikal</div>
+</div>
+<div class="client-logo">
+    <img src="foto/pt_long_sheng_sinar_utama.png" alt="PT Long Sheng Sinar Utama" loading="lazy">
+    <div class="client-tooltip">PT Long Sheng Sinar Utama</div>
+</div>
+<div class="client-logo">
+    <img src="foto/pt_cahaya_beton_indonesia.png" alt="PT Cahaya Beton Indonesia" loading="lazy">
+    <div class="client-tooltip">PT Cahaya Beton Indonesia</div>
+</div>
+<div class="client-logo">
+    <img src="foto/pt_fit_tech_jaya.png" alt="PT Fit Tech Jaya" loading="lazy">
+    <div class="client-tooltip">PT Fit Tech Jaya</div>
+</div>
+<div class="client-logo client-logo-text">
+<span class="client-name-text">PT Bao Sheng Tekno Mekanik</span>
+    <div class="client-tooltip">PT Bao Sheng Tekno Mekanik</div>
+</div>
+<div class="client-logo client-logo-text">
+    <span class="client-name-text">PT Bojun Lai Indonesia</span>
+    <div class="client-tooltip">PT Bojun Lai Indonesia</div>
+</div>
                         </div>
                     </div>
                     
@@ -2288,19 +2401,65 @@
                 </div>
                 
                 <div class="testimonial-section">
-                    <h3>Testimoni Klien</h3>
-                    <div class="testimonial-cards">
-                        <div class="testimonial-card">
-                            <p>"SALMA Solutions membantu kami menata ulang sistem HR dengan pendekatan yang sangat profesional. Tim kami kini lebih produktif dan terstruktur."</p>
-                            <p><strong>— HR Manager, PT Admart Indonesia</strong></p>
-                        </div>
-                        
-                        <div class="testimonial-card">
-                            <p>"Layanan headhunter-nya sangat memudahkan. Dalam waktu singkat kami mendapatkan kandidat yang tepat dan langsung perform."</p>
-                            <p><strong>— Branch Manager, PT Supersublim Indonesia</strong></p>
-                        </div>
-                    </div>
-                </div>
+    <h3>Testimoni Klien</h3>
+    <div class="testimonial-cards">
+
+        <!-- 1. Konsultan Bisnis & Manajemen -->
+        <div class="testimonial-card">
+            <p>"SALMA Solutions membantu kami merumuskan ulang strategi bisnis dan efisiensi operasional. Hasilnya, proses kerja jadi lebih terarah dan profit kami meningkat signifikan dalam 6 bulan."</p>
+            <p><strong>— Direktur Utama, PT Karya Sinergi Cemerlang</strong></p>
+        </div>
+
+        <!-- 2. Konsultan HR (SDM) -->
+        <div class="testimonial-card">
+            <p>"Penyusunan struktur organisasi, KPI, dan SOP HR dari SALMA Solutions sangat sistematis. Karyawan kami kini lebih produktif, dan sistem HR jadi jauh lebih tertata."</p>
+            <p><strong>— HR Manager, PT Admart Indonesia</strong></p>
+        </div>
+
+        <!-- 3. Legalitas Corporate -->
+        <div class="testimonial-card">
+            <p>"Proses perpanjangan izin dan laporan kepatuhan perusahaan kami ditangani dengan cepat, transparan, dan aman. SALMA Solutions benar-benar mitra legalitas yang bisa diandalkan."</p>
+            <p><strong>— Legal Manager, PT Zhiyuan International Trade</strong></p>
+        </div>
+
+        <!-- 4. Penyedia Tenaga Kerja / Head Hunter -->
+        <div class="testimonial-card">
+            <p>"Layanan headhunter-nya luar biasa. Dalam waktu singkat kami mendapatkan kandidat manajerial yang tepat, kompeten, dan langsung perform di posisinya."</p>
+            <p><strong>— Branch Manager, PT Supersublim Indonesia</strong></p>
+        </div>
+
+        <!-- 5. Pendaftaran Perusahaan -->
+        <div class="testimonial-card">
+            <p>"Dari pendirian PT, pengurusan NIB, hingga perusahaan kami aktif beroperasi — semuanya dibantu SALMA Solutions. Prosesnya cepat, mudah, dan sesuai regulasi."</p>
+            <p><strong>— Founder, Cotton DNA Semarang</strong></p>
+        </div>
+
+        <!-- 6. Konsultan Bisnis & Manajemen (tambahan) -->
+        <div class="testimonial-card">
+            <p>"Pendampingan bisnis dari SALMA Solutions sangat praktis dan terukur. Kami dibantu menyusun rencana bisnis yang realistis, sehingga keputusan manajemen jadi lebih akurat."</p>
+            <p><strong>— Owner, Pilar Abadi Realty</strong></p>
+        </div>
+
+        <!-- 7. Konsultan HR (tambahan) -->
+        <div class="testimonial-card">
+            <p>"Program pelatihan dan pengembangan SDM yang dirancang SALMA Solutions benar-benar tepat sasaran. Kompetensi tim kami meningkat, dan budaya kerja jadi lebih positif."</p>
+            <p><strong>— HRD Head, Wadah Kertas Nusantara</strong></p>
+        </div>
+
+        <!-- 8. Head Hunter (tambahan) -->
+        <div class="testimonial-card">
+            <p>"Rekrutmen massal untuk kebutuhan produksi kami ditangani dengan cepat dan rapi. Kandidat yang masuk benar-benar sesuai kualifikasi yang kami butuhkan."</p>
+            <p><strong>— Plant Manager, Nuclear</strong></p>
+        </div>
+
+        <!-- 9. Legalitas & Pendaftaran (tambahan) -->
+        <div class="testimonial-card">
+            <p>"SALMA Solutions membantu kami mendirikan badan usaha dan mengurus seluruh perizinan hingga selesai. Timnya profesional, responsif, dan sangat kooperatif."</p>
+            <p><strong>— Direktur, Adivasa</strong></p>
+        </div>
+
+    </div>
+</div>
             </div>
         </div>
     </section>
@@ -2314,6 +2473,7 @@
                         <h3>SALMA Solutions</h3>
                         <p>PT Satu Langkah Maju Bersama</p>
                         <p>Konsultan Bisnis | Headhunter | Produk Digital HR</p>
+<p>Legal Corporate | Pendaftaran Perusahaan</p>
                         <div class="social-links">
                             <a href="https://wa.me/6281901763203" target="_blank" title="WhatsApp">
                                 <i class="fab fa-whatsapp"></i>
